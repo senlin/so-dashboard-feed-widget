@@ -152,19 +152,19 @@ function dbfw_render_form() {
 		</form>
 
 		<p style="margin-top:15px;">
-			<p style="font-style: italic;font-weight: bold;color: #26779a;"><?php _e('If you have found this plugin at all useful, please give it a favourable rating in the <a href="http://wordpress.org/extend/plugins/dashboard-feed-widget/" rel="nofollow" title="Rate this plugin!">WordPress Plugin Repository</a> and/or consider making a donation:', 'dbfw'); ?>
+			<p style="font-style: italic;font-weight: bold;color: #26779a;"><?php _e('If you have found this plugin at all useful, please give it a 5 star rating in the <a href="http://wordpress.org/extend/plugins/dashboard-feed-widget/" rel="nofollow" title="Rate this plugin!">WordPress Plugin Repository</a> and/or consider making a donation:', 'dbfw'); ?>
 				<form class="pp" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="width: 35%;position:relative;">
 					<input type="hidden" name="cmd" value="_s-xclick">
 					<input type="hidden" name="hosted_button_id" value="BNH7UTKJZ6KP4">
 					<input type="hidden" name="on0" value="Donation"><p><?php _e('I would like to donate', 'dbfw'); ?></p>
 					<select class="ppbtn" name="os0">
 						<option value="thanks so much"><?php _e('USD 10.00 - thanks so much', 'dbfw'); ?></option>
-						<option value="it's a start"><?php _e('USD 1.00 - it\'s a start', 'dbfw'); ?></option>
-						<option value="you're nice"><?php _e('USD 5.00 - you\'re nice', 'dbfw'); ?></option>
-						<option value="now we're talking"><?php _e('USD 25.00 - now we\'re talking', 'dbfw'); ?></option>
+						<option value="it's a start"><?php _e('USD 1.00 - it&#039;s a start', 'dbfw'); ?></option>
+						<option value="you're nice"><?php _e('USD 5.00 - you&#039;re nice', 'dbfw'); ?></option>
+						<option value="now we're talking"><?php _e('USD 25.00 - now we&#039;re talking', 'dbfw'); ?></option>
 						<option value="very generate of you"><?php _e('USD 50.00 - very generate of you', 'dbfw'); ?></option>
 						<option value="wow, hall of fame material"><?php _e('USD 100.00 - Wow, hall of fame material!', 'dbfw'); ?></option>
-						<option value="I'm dreaming"><?php _e('USD 500.00 - I\'m dreaming', 'dbfw'); ?></option>
+						<option value="I'm dreaming"><?php _e('USD 500.00 - I&#039;m dreaming', 'dbfw'); ?></option>
 						<option value="still dreaming..."><?php _e('USD 1,000.00 - still dreaming...', 'dbfw'); ?></option>
 					</select>
 					<input type="hidden" name="currency_code" value="USD">
