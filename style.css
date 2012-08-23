@@ -1,0 +1,6 @@
+/*
+CSS for the Dashboard Feed Widget
+*/
+#dbfw_widget.postbox .handlediv { display: none; }
+#dbfw_widget { background: #FFFF99; }
+#dbfw_widget a:hover, #dbfw_widget a:active, #dbfw_widget a:focus { color: #003366; }
