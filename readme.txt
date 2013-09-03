@@ -1,13 +1,13 @@
-=== Dashboard Feed Widget ===
+=== SO Dashboard Feed Widget ===
 Contributors: senlin
 Donate link: http://senl.in/PPd0na
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 1.0.1
+Tested up to: 3.6
+Stable tag: 1.0.3
 License: GPLv2 or later
 
-The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
 == Description ==
 
@@ -35,8 +35,8 @@ After saving the settings, you can see the results in the main WordPress Dashboa
 
 == Frequently Asked Questions ==
 
-= Does the Dashboard Feed Widget plugin also work on WordPress Multisite? =
-For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [Multisite Dashboard Feed Widget](http://wordpress.org/extend/plugins/multisite-dashboard-feed-widget/) that I developed a while back and which is also compatible with the latest version of WordPress.
+= Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite? =
+For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](http://wordpress.org/plugins/multisite-dashboard-feed-widget/) that I developed a while back and which is also compatible with the latest version of WordPress.
 
 == Screenshots ==
 
@@ -44,6 +44,13 @@ For now it doesn't for reasons I do not know yet, but I'm looking into. If you w
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 1.0.3 =
+* svn mess-up
+
+= 1.0.2 =
+* Compatible up to WP 3.6
+* Change Twitter username
 
 = 1.0.1 =
 Add current translation to readme.txt, add some text to options page, adjust Dutch translation file

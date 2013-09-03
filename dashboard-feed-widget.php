@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Dashboard Feed Widget
+Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://wpti.ps/?p=189
-Description: The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 1.0.1
+Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+Version: 1.0.3
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
 
-/*  Copyright 2012  Piet Bos  (email : senlinonline@gmail.com)
+/*  Copyright 2013  Piet Bos  (email : piethfbos@gmail.com)
 
 Credits: Option Page made possible thanks to the Plugin Options Starter Kit by David Gwyer (http://www.presscoders.com/plugins/plugin-options-starter-kit/)
 
@@ -32,24 +32,27 @@ GNU General Public License for more details.
 //ini_set("display_errors", 1);
 //define('WP-DEBUG', true);
 
+/* Prevent direct access to files */
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 /* Version check */
 global $wp_version;
-$exit_msg=__('Dashboard Feed Widget requires WordPress version 3.0 or higher; please update first.', 'dbfw');
+$exit_msg=__( 'Dashboard Feed Widget requires WordPress version 3.0 or higher; please update first.', 'dbfw' );
 if (version_compare($wp_version,"3.0","<"))
 {
 	exit ($exit_msg);
 }
 
 // Set-up Action and Filter Hooks
-register_activation_hook(__FILE__, 'dbfw_add_defaults');
-register_uninstall_hook(__FILE__, 'dbfw_delete_plugin_options');
-add_action('admin_init', 'dbfw_init' );
-add_action('admin_menu', 'dbfw_add_options_page');
+register_activation_hook( __FILE__, 'dbfw_add_defaults' );
+register_uninstall_hook( __FILE__, 'dbfw_delete_plugin_options' );
+add_action( 'admin_init', 'dbfw_init' );
+add_action( 'admin_menu', 'dbfw_add_options_page' );
 add_filter( 'plugin_action_links', 'dbfw_plugin_action_links', 10, 2 );
 
 // Delete options table entries ONLY when plugin deactivated AND deleted
 function dbfw_delete_plugin_options() {
-	delete_option('dbfw_options');
+	delete_option( 'dbfw_options' );
 }
 
 // Define default option settings
@@ -58,12 +61,12 @@ function dbfw_add_defaults() {
 	if(($tmp['chk_default_options_db']=='1')||(!is_array($tmp))) {
 		delete_option('dbfw_options'); // so we don't have to reset all the 'off' checkboxes too! (don't think this is needed but leave for now)
 		$arr = array(
-			'widget_title' => __('Recent Updates', 'dbfw'),
+			'widget_title' => __( 'Recent Updates', 'dbfw' ),
 			'feed_url' => 'http://wpti.ps/feed/',
 			'drp_select_box' => '3',
 			'chk_default_options_db' => ''
 		);
-		update_option('dbfw_options', $arr);
+		update_option( 'dbfw_options', $arr );
 	}
 }
 
@@ -73,12 +76,12 @@ function dbfw_init(){
 	load_plugin_textdomain( 'dbfw' );
 }
 
-	if(!load_plugin_textdomain('dbfw','/wp-content/languages/'))
-		load_plugin_textdomain('dbfw', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	if(!load_plugin_textdomain( 'dbfw','/wp-content/languages/' ) )
+		load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 // Add menu page
 function dbfw_add_options_page() {
-	add_options_page('Dashboard Feed Widget Settings', 'Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form');
+	add_options_page( 'Dashboard Feed Widget Settings', 'Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
 }
 
 // Render the Plugin options form
@@ -87,13 +90,13 @@ function dbfw_render_form() {
 	<div class="wrap">
 		<!-- Display Plugin Icon, Header, and Description -->
 		<div class="icon32" id="icon-options-general"><br></div>
-		<h2><?php _e('Dashboard Feed Widget Settings', 'dbfw'); ?></h2>
-		<p><?php _e('Below you can adjust the output of the Dashboard Widget. You can change the title of the widget, the feed URL and the amount of feed items to show.', 'dbfw'); ?></p>
+		<h2><?php _e( 'Dashboard Feed Widget Settings', 'dbfw' ); ?></h2>
+		<p><?php _e( 'Below you can adjust the output of the Dashboard Widget. You can change the title of the widget, the feed URL and the amount of feed items to show.', 'dbfw' ); ?></p>
 
 		<!-- Beginning of the Plugin Options Form -->
 		<form method="post" action="options.php">
-			<?php settings_fields('dbfw_plugin_options'); ?>
-			<?php $options = get_option('dbfw_options'); ?>
+			<?php settings_fields( 'dbfw_plugin_options' ); ?>
+			<?php $options = get_option( 'dbfw_options' ); ?>
 
 			<!-- Table Structure Containing Form Controls -->
 			<!-- Each Plugin Option Defined on a New Table Row -->
@@ -101,10 +104,10 @@ function dbfw_render_form() {
 
 				<!-- Textbox Control -->
 				<tr>
-					<th scope="row"><?php _e('Widget Title', 'dbfw'); ?></th>
+					<th scope="row"><?php _e( 'Widget Title', 'dbfw' ); ?></th>
 					<td>
 						<input type="text" size="57" name="dbfw_options[widget_title]" value="<?php echo $options['widget_title']; ?>" />
-						<br /><span style="color:#666666;margin-left:2px;"><?php _e('Change the title of the Dashboard Feed Widget into something of your liking', 'dbfw'); ?></span>
+						<br /><span style="color:#666666;margin-left:2px;"><?php _e( 'Change the title of the Dashboard Feed Widget into something of your liking', 'dbfw' ); ?></span>
 					</td>
 				</tr>
 
@@ -113,7 +116,7 @@ function dbfw_render_form() {
 					<th scope="row"><?php _e('Feed URL', 'dbfw'); ?></th>
 					<td>
 						<input type="text" size="57" name="dbfw_options[feed_url]" value="<?php echo $options['feed_url']; ?>" />
-						<br /><span style="color:#666666;margin-left:2px;"><?php _e('Change the feed-URL to a site of your choice', 'dbfw'); ?></span>
+						<br /><span style="color:#666666;margin-left:2px;"><?php _e( 'Change the feed-URL to a site of your choice', 'dbfw' ); ?></span>
 					</td>
 				</tr>
 
@@ -122,18 +125,18 @@ function dbfw_render_form() {
 					<th scope="row"><?php _e('How many Feed Items to show in the Dashboard Widget', 'dbfw'); ?></th>
 					<td>
 						<select name='dbfw_options[drp_select_box]'>
-							<option value='1' <?php selected('1', $options['drp_select_box']); ?>>1</option>
-							<option value='2' <?php selected('2', $options['drp_select_box']); ?>>2</option>
-							<option value='3' <?php selected('3', $options['drp_select_box']); ?>>3</option>
-							<option value='4' <?php selected('4', $options['drp_select_box']); ?>>4</option>
-							<option value='5' <?php selected('5', $options['drp_select_box']); ?>>5</option>
-							<option value='6' <?php selected('6', $options['drp_select_box']); ?>>6</option>
-							<option value='7' <?php selected('7', $options['drp_select_box']); ?>>7</option>
-							<option value='8' <?php selected('8', $options['drp_select_box']); ?>>8</option>
-							<option value='9' <?php selected('9', $options['drp_select_box']); ?>>9</option>
-							<option value='10' <?php selected('10', $options['drp_select_box']); ?>>10</option>
+							<option value='1' <?php selected( '1', $options['drp_select_box'] ); ?>>1</option>
+							<option value='2' <?php selected( '2', $options['drp_select_box'] ); ?>>2</option>
+							<option value='3' <?php selected( '3', $options['drp_select_box'] ); ?>>3</option>
+							<option value='4' <?php selected( '4', $options['drp_select_box'] ); ?>>4</option>
+							<option value='5' <?php selected( '5', $options['drp_select_box'] ); ?>>5</option>
+							<option value='6' <?php selected( '6', $options['drp_select_box'] ); ?>>6</option>
+							<option value='7' <?php selected( '7', $options['drp_select_box'] ); ?>>7</option>
+							<option value='8' <?php selected( '8', $options['drp_select_box'] ); ?>>8</option>
+							<option value='9' <?php selected( '9', $options['drp_select_box'] ); ?>>9</option>
+							<option value='10' <?php selected( '10', $options['drp_select_box'] ); ?>>10</option>
 						</select>
-						<span style="color:#666666;margin-left:2px;"><?php _e('How many feed items to show in the widget?', 'dbfw'); ?></span>
+						<span style="color:#666666;margin-left:2px;"><?php _e( 'How many feed items to show in the widget?', 'dbfw' ); ?></span>
 					</td>
 				</tr>
 
@@ -141,49 +144,44 @@ function dbfw_render_form() {
 				<tr valign="top" style="border-top:#dddddd 1px solid;">
 					<th scope="row"><?php _e('Database Options', 'dbfw'); ?></th>
 					<td>
-						<label><input name="dbfw_options[chk_default_options_db]" type="checkbox" value="1" <?php if (isset($options['chk_default_options_db'])) { checked('1', $options['chk_default_options_db']); } ?> /> <?php _e('Restore defaults upon plugin deactivation/reactivation', 'dbfw'); ?></label>
-						<br /><span style="color:#666666;margin-left:2px;"><?php _e('Only check this if you want to reset plugin settings upon Plugin reactivation', 'dbfw'); ?></span>
+						<label><input name="dbfw_options[chk_default_options_db]" type="checkbox" value="1" <?php if ( isset($options['chk_default_options_db'] ) ) { checked( '1', $options['chk_default_options_db'] ); } ?> /> <?php _e( 'Restore defaults upon plugin deactivation/reactivation', 'dbfw' ); ?></label>
+						<br /><span style="color:#666666;margin-left:2px;"><?php _e( 'Only check this if you want to reset plugin settings upon Plugin reactivation', 'dbfw' ); ?></span>
 					</td>
 				</tr>
 			</table>
 			<p class="submit">
-			<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'dbfw') ?>" />
+			<input type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'dbfw' ) ?>" />
 			</p>
 		</form>
 
 		<p style="margin-top:15px;">
-			<p style="font-style: italic;font-weight: bold;color: #26779a;"><?php _e('If you have found this plugin at all useful, please give it a 5 star rating in the <a href="http://wordpress.org/extend/plugins/dashboard-feed-widget/" rel="nofollow" title="Rate this plugin!">WordPress Plugin Repository</a> and/or consider making a donation:', 'dbfw'); ?>
-				<form class="pp" action="https://www.paypal.com/cgi-bin/webscr" method="post" style="width: 35%;position:relative;">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="BNH7UTKJZ6KP4">
-					<input type="hidden" name="on0" value="Donation"><p><?php _e('I would like to donate', 'dbfw'); ?></p>
-					<select class="ppbtn" name="os0">
-						<option value="thanks so much"><?php _e('USD 10.00 - thanks so much', 'dbfw'); ?></option>
-						<option value="it's a start"><?php _e('USD 1.00 - it&#039;s a start', 'dbfw'); ?></option>
-						<option value="you're nice"><?php _e('USD 5.00 - you&#039;re nice', 'dbfw'); ?></option>
-						<option value="now we're talking"><?php _e('USD 25.00 - now we&#039;re talking', 'dbfw'); ?></option>
-						<option value="very generate of you"><?php _e('USD 50.00 - very generate of you', 'dbfw'); ?></option>
-						<option value="wow, hall of fame material"><?php _e('USD 100.00 - Wow, hall of fame material!', 'dbfw'); ?></option>
-						<option value="I'm dreaming"><?php _e('USD 500.00 - I&#039;m dreaming', 'dbfw'); ?></option>
-						<option value="still dreaming..."><?php _e('USD 1,000.00 - still dreaming...', 'dbfw'); ?></option>
-					</select>
-					<input type="hidden" name="currency_code" value="USD">
-					<input class="btn" style="height: 47px; float: right; position: absolute; top: 10px;" type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
+			<p style="font-style: italic;font-weight: bold;color: #26779a;">
+				
+				<?php
+				/* Translators: 1 is link to WP Repo */
+				printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'pysl' ), 
+					esc_url( __( 'http://wordpress.org/plugins/dashboard-feed-widget/', 'dbfw' ) )
+				);
+				?>
+				
 			</p>
-			<div class="postbox" style="display: block; float: left; width: 300px; margin: 30px 10px 10px 0;">
-			<h3 class="hndle" style="padding:5px;"><span><?php _e('About Piet Bos', 'dbfw'); ?></span></h3>
-			<div class="inside">
-				<p><img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float:left;margin-right:10px;padding:3px;border:1px solid #dfdfdf;"/>
-				<?php _e('Piet has been developing websites since 2005 and working with WordPress since 2006. You can find out more information about him via the following links:', 'dbfw'); ?><br />
-				<a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a><br />
-				<a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a><br />
-				<a href="http://wpbaseju.mp/" target="_blank" title="Basejump WordPress Theme Piet developed"><?php _e('Basejump WordPress Theme that Piet developed', 'dbfw'); ?></a><br />
-				<a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e('Google+', 'dbfw'); ?></a><br />
-				<a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e('LinkedIn', 'dbfw'); ?></a><br />
-				<a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e('Twitter: @SenlinOnline', 'dbfw'); ?></a><br />
-				<a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e('WordPress.org Profile', 'dbfw'); ?></a></p>
+			<div class="postbox" style="display: block; float: left; width: 500px; margin: 30px 10px 10px 0;">
+				<h3 class="hndle" style="padding:5px;"><span><?php _e( 'About Piet Bos', 'dbfw' ); ?></span></h3>
+				<div class="inside">
+					<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float:left;margin-right:10px;padding:3px;border:1px solid #dfdfdf;"/>
+					<p style="height:60px;padding-top:20px">
+						<?php _e( 'Piet has been developing websites since 2005 and working with WordPress since 2006. You can find out more information about him via the following links:', 'dbfw' ); ?>
+					</p>
+					<ul style="clear:both; margin-top: 20px;">
+						<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
+						<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
+						<li><a href="http://wpbaseju.mp/" target="_blank" title="Basejump WordPress Theme Piet developed"><?php _e( 'Basejump WordPress Theme that Piet developed', 'dbfw' ); ?></a></li>
+						<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dbfw' ); ?></a></li>
+						<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dbfw' ); ?></a></li>
+						<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dbfw' ); ?></a></li>
+						<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dbfw' ); ?></a></li>
+						<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dbfw' ); ?></a></li>
+					</ul>
 				</div>
 			</div>
 
@@ -196,8 +194,8 @@ function dbfw_render_form() {
 // Sanitize and validate input. Accepts an array, return a sanitized array.
 function dbfw_validate_options($input) {
 	// strip html from textboxes
-	$input['widget_title'] =  wp_filter_nohtml_kses($input['widget_title']); // Sanitize input (strip html tags, and escape characters)
-	$input['feed_url'] =  wp_filter_nohtml_kses($input['feed_url']); // Sanitize input (strip html tags, and escape characters)
+	$input['widget_title'] =  wp_filter_nohtml_kses( $input['widget_title'] ); // Sanitize input (strip html tags, and escape characters)
+	$input['feed_url'] =  wp_filter_nohtml_kses( $input['feed_url'] ); // Sanitize input (strip html tags, and escape characters)
 	return $input;
 }
 
@@ -205,7 +203,7 @@ function dbfw_validate_options($input) {
 function dbfw_plugin_action_links( $links, $file ) {
 
 	if ( $file == plugin_basename( __FILE__ ) ) {
-		$dbfw_links = '<a href="'.get_admin_url().'options-general.php?page=dashboard-feed-widget/dashboard-feed-widget.php">'.__('Settings', 'dbfw').'</a>';
+		$dbfw_links = '<a href="' . get_admin_url() . 'options-general.php?page=dashboard-feed-widget/dashboard-feed-widget.php">' . __( 'Settings', 'dbfw' ) . '</a>';
 		// make the 'Settings' link appear first
 		array_unshift( $links, $dbfw_links );
 	}
@@ -215,13 +213,13 @@ function dbfw_plugin_action_links( $links, $file ) {
 
 // Add Feed Dashboard Widget
 function dbfw_setup_function() {
-	$options = get_option('dbfw_options');
+	$options = get_option( 'dbfw_options' );
 	$widgettitle = $options['widget_title'];
 	add_meta_box( 'dbfw_widget',  $widgettitle, 'dbfw_widget_function', 'dashboard', 'normal', 'high' );
 }
 
 function dbfw_widget_function() {
-	$options = get_option('dbfw_options');
+	$options = get_option( 'dbfw_options' );
 	$feedurl = $options['feed_url'];
 	$select = $options['drp_select_box'];
 
@@ -241,7 +239,7 @@ function dbfw_widget_function() {
     foreach ($rss_items as $item) {
 
 ?>
-		<li><a class="rsswidget" href='<?php echo $item->get_permalink(); ?>'><?php echo $item->get_title(); ?></a> <span class="rss-date"><?php echo $item->get_date('j F Y'); ?></span></li>
+		<li><a class="rsswidget" href='<?php echo $item->get_permalink(); ?>'><?php echo $item->get_title(); ?></a> <span class="rss-date"><?php echo $item->get_date( 'j F Y' ); ?></span></li>
 <?php } ?>
 	</ul>
 	</div>
