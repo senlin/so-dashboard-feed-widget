@@ -4,171 +4,126 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Text in echo
-#: dashboard-feed-widget.php:176
-msgid "About Piet Bos"
+#: dashboard-feed-widget.php:232
+msgid "About the Author"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:182
-msgid "Basejump WordPress Theme that Piet developed"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:91
-msgid "Below you can adjust the output of the Dashboard Widget. You can change the title of the widget, the feed URL and the amount of feed items to show."
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:116
-msgid "Change the feed-URL to a site of your choice"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:107
-msgid "Change the title of the Dashboard Feed Widget into something of your liking"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:90
-msgid "Dashboard Feed Widget Settings"
-msgstr ""
-
-#. Text in function
-#: dashboard-feed-widget.php:248
-msgid "Dashboard Feed Widget requires WordPress version 3.0 or higher; please update first."
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:142
-msgid "Database Options"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:113
-msgid "Feed URL"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:183
-msgid "Google+"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:122
-msgid "How many Feed Items to show in the Dashboard Widget"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:136
-msgid "How many feed items to show in the widget?"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:159
-msgid "I would like to donate"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:155
-msgid "If you have found this plugin at all useful, please give it a favourable rating in the <a href="http://wordpress.org/extend/plugins/dashboard-feed-widget/" rel="nofollow" title="Rate this plugin!">WordPress Plugin Repository</a> and/or consider making a donation:"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:184
-msgid "LinkedIn"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:145
-msgid "Only check this if you want to reset plugin settings upon Plugin reactivation"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:179
-msgid "Piet has been developing websites since 2005 and working with WordPress since 2006. You can find out more information about him via the following links:"
-msgstr ""
-
-#. Text in function
-#: dashboard-feed-widget.php:248
-msgid "Recent Updates"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:144
-msgid "Restore defaults upon plugin deactivation/reactivation"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:150
-msgid "Save Settings"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:180
-msgid "Senlin Online"
-msgstr ""
-
-#. Text in function
-#: dashboard-feed-widget.php:248
-msgid "Settings"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:185
-msgid "Twitter: @SenlinOnline"
-msgstr ""
-
-#. Text in echo
-#: dashboard-feed-widget.php:168
-msgid "USD 1,000.00 - still dreaming..."
+#: dashboard-feed-widget.php:131
+msgid "Below you can adjust the output of the SO Dashboard Feed Widget. You can change the title of the widget, the feed URL and the amount of feed items to show."
 msgstr ""
 
 #. Text in echo
 #: dashboard-feed-widget.php:162
-msgid "USD 1.00 - it's a start"
+msgid "Change the feed-URL to a site of your choice"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:161
-msgid "USD 10.00 - thanks so much"
+#: dashboard-feed-widget.php:151
+msgid "Change the title of the SO Dashboard Feed Widget into something of your liking"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:166
-msgid "USD 100.00 - Wow, hall of fame material!"
+#: dashboard-feed-widget.php:196
+msgid "Database Options"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:164
-msgid "USD 25.00 - now we're talking"
+#: dashboard-feed-widget.php:158
+msgid "Feed URL"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:163
-msgid "USD 5.00 - you're nice"
+#: dashboard-feed-widget.php:249
+msgid "Github"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:165
-msgid "USD 50.00 - very generate of you"
+#: dashboard-feed-widget.php:246
+msgid "Google+"
+msgstr ""
+
+#. Text in function
+#: dashboard-feed-widget.php:238
+msgid "Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href=\"%s\" title=\"SO WP Plugins\">SO WP Plugins</a>. You can find out more information about me via the following links:"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:167
-msgid "USD 500.00 - I'm dreaming"
+#: dashboard-feed-widget.php:169
+msgid "How many Feed Items to show in the SO Dashboard Feed Widget"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:181
+#: dashboard-feed-widget.php:184
+msgid "How many feed items to show in the widget?"
+msgstr ""
+
+#. Text in function
+#: dashboard-feed-widget.php:317
+msgid "If you have found this plugin at all useful, please give it a favourable rating in the <a href=\"%s\" title=\"Rate this plugin!\">WordPress Plugin Repository</a>."
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:247
+msgid "LinkedIn"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:203
+msgid "Only check this if you want to reset plugin settings upon Plugin reactivation"
+msgstr ""
+
+#. Text in function
+#: dashboard-feed-widget.php:1
+msgid "Recent Updates"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:200
+msgid "Restore defaults upon plugin deactivation/reactivation"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:129
+msgid "SO Dashboard Feed Widget Settings"
+msgstr ""
+
+#. Text in function
+#: dashboard-feed-widget.php:1
+msgid "SO Dashboard Feed Widget requires WordPress version 3.5.2 or higher; please update first."
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:211
+msgid "Save Settings"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:244
+msgid "Senlin Online"
+msgstr ""
+
+#. Text in function
+#: dashboard-feed-widget.php:261
+msgid "Settings"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:248
+msgid "Twitter: @piethfbos"
+msgstr ""
+
+#. Text in echo
+#: dashboard-feed-widget.php:245
 msgid "WP Tips"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:104
+#: dashboard-feed-widget.php:147
 msgid "Widget Title"
 msgstr ""
 
 #. Text in echo
-#: dashboard-feed-widget.php:186
+#: dashboard-feed-widget.php:250
 msgid "WordPress.org Profile"
 msgstr ""
