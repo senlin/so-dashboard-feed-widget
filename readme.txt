@@ -96,3 +96,8 @@ Add current translation to readme.txt, add some text to options page, adjust Dut
 
 = 1.0 =
 First release
+
+== Upgrade Notice ==
+
+= 1.0.5 =
+* minimum required WordPress version is now 3.6
