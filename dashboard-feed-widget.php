@@ -3,7 +3,7 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://wpti.ps/?p=189
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 1.0.4
+Version: 1.0.5
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -38,14 +38,49 @@ GNU General Public License for more details.
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
- * Version check; any WP version under 3.5.2 is not supported (if only to "force" users to stay up to date)
+ * Version check; any WP version under 3.6 is not supported (if only to "force" users to stay up to date)
+ * 
+ * adapted from example by Thomas Scholz (@toscho) http://wordpress.stackexchange.com/a/95183/2015, Version: 2013.03.31, Licence: MIT (http://opensource.org/licenses/MIT)
+ *
+ * @since 1.0.5
  */
-global $wp_version;
 
-$exit_msg= __( 'SO Dashboard Feed Widget requires WordPress version 3.5.2 or higher; please update first.', 'dbfw' );
+//Only do this when on the Plugins page.
+if ( ! empty ( $GLOBALS['pagenow'] ) && 'plugins.php' === $GLOBALS['pagenow'] )
+	add_action( 'admin_notices', 'pinyinslugs_check_admin_notices', 0 );
 
-if ( version_compare( $wp_version, '3.5.2', '<' ) ) {
-	exit ( $exit_msg );
+function pinyinslugs_min_wp_version() {
+	global $wp_version;
+	$require_wp = '3.6';
+	$update_url = get_admin_url( null, 'update-core.php' );
+
+	$errors = array();
+
+	if ( version_compare( $wp_version, $require_wp, '<' ) ) 
+
+		$errors[] = "You have WordPress version $wp_version installed, but <b>this plugin requires at least WordPress $require_wp</b>. Please <a href='$update_url'>update your WordPress version</a>.";
+
+	return $errors;
+}
+
+function pinyinslugs_check_admin_notices()
+{
+	$errors = pinyinslugs_min_wp_version();
+
+	if ( empty ( $errors ) )
+		return;
+
+	// Suppress "Plugin activated" notice.
+	unset( $_GET['activate'] );
+
+	// this plugin's name
+	$name = get_file_data( __FILE__, array ( 'Plugin Name' ), 'plugin' );
+
+	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'pinyinslugs' ),
+		join( '</p><p>', $errors ),
+		$name[0]
+	);
+	deactivate_plugins( plugin_basename( __FILE__ ) );
 }
 
 /**
@@ -56,6 +91,8 @@ register_activation_hook( __FILE__, 'dbfw_add_defaults' );
 register_uninstall_hook( __FILE__, 'dbfw_delete_plugin_options' );
 
 add_action( 'admin_init', 'dbfw_init' );
+
+add_action( 'plugins_loaded', 'dbfw_i18n' );
 
 add_action( 'admin_menu', 'dbfw_add_options_page' );
 
@@ -99,13 +136,19 @@ function dbfw_init() {
 	
 	register_setting( 'dbfw_plugin_options', 'dbfw_options', 'dbfw_validate_options' );
 	
-	load_plugin_textdomain( 'dbfw' );
-
 }
 
-	if ( ! load_plugin_textdomain( 'dbfw','/wp-content/languages/' ) )
-		
-		load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages' );
+/**
+ * Loads the translation files.
+ *
+ * @since 1.0.5
+ */
+function dbfw_i18n() {
+
+	/* Load the translation of the plugin. */
+	load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
 
 /**
  * Add menu page
@@ -213,48 +256,44 @@ function dbfw_render_form() { ?>
 		
 		</form>
 
-		<p style="margin-top: 15px;">
+		<p style="font-style: italic; font-weight: bold; color: #26779A;">
 			
-			<p style="font-style: italic; font-weight: bold; color: #26779A;">
-				
-				<?php
-				/* Translators: 1 is link to WP Repo */
-				printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dbfw' ), 
-					esc_url( 'http://wordpress.org/plugins/dashboard-feed-widget/' )
-				);
-				?>
-				
-			</p>
+			<?php
+			/* Translators: 1 is link to WP Repo */
+			printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dbfw' ), 
+				esc_url( 'http://wordpress.org/plugins/dashboard-feed-widget/' )
+			);
+			?>
 			
-			<div class="postbox" style="display: block; float: left; width: 500px; margin: 30px 10px 10px 0;">
-				
-				<h3 class="hndle" style="padding: 5px;">
-					<span><?php _e( 'About the Author', 'dbfw' ); ?></span>
-				</h3>
-				
-				<div class="inside">
-					<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float: left; margin-right: 10px; padding: 3px; border: 1px solid #DFDFDF;"/>
-					<p style="height: 60px; padding-top: 20px">
-						<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dbfw' ),
-						esc_url( 'http://so-wp.github.io/' )
-						); ?>
-					</p>
-					
-					<ul style="clear: both; margin-top: 20px;">
-						<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
-						<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
-						<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dbfw' ); ?></a></li>
-						<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dbfw' ); ?></a></li>
-						<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dbfw' ); ?></a></li>
-						<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dbfw' ); ?></a></li>
-						<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dbfw' ); ?></a></li>
-					</ul>
-				
-				</div> <!-- end .inside -->
-			
-			</div> <!-- end .postbox -->
-
 		</p>
+		
+		<div class="postbox" style="display: block; float: left; width: 500px; margin: 30px 10px 10px 0;">
+			
+			<h3 class="hndle" style="padding: 5px;">
+				<span><?php _e( 'About the Author', 'dbfw' ); ?></span>
+			</h3>
+			
+			<div class="inside">
+				<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float: left; margin-right: 10px; padding: 3px; border: 1px solid #DFDFDF;"/>
+				<p style="height: 60px; padding-top: 20px">
+					<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dbfw' ),
+					esc_url( 'http://so-wp.github.io/' )
+					); ?>
+				</p>
+				
+				<ul style="clear: both; margin-top: 20px;">
+					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
+					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
+					<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dbfw' ); ?></a></li>
+					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dbfw' ); ?></a></li>
+					<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dbfw' ); ?></a></li>
+					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dbfw' ); ?></a></li>
+					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dbfw' ); ?></a></li>
+				</ul>
+			
+			</div> <!-- end .inside -->
+		
+		</div> <!-- end .postbox -->
 
 	</div> <!-- end .wrap -->
 
