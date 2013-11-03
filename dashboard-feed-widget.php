@@ -47,9 +47,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 //Only do this when on the Plugins page.
 if ( ! empty ( $GLOBALS['pagenow'] ) && 'plugins.php' === $GLOBALS['pagenow'] )
-	add_action( 'admin_notices', 'pinyinslugs_check_admin_notices', 0 );
+	add_action( 'admin_notices', 'dbfw_check_admin_notices', 0 );
 
-function pinyinslugs_min_wp_version() {
+function dbfw_min_wp_version() {
 	global $wp_version;
 	$require_wp = '3.6';
 	$update_url = get_admin_url( null, 'update-core.php' );
@@ -63,9 +63,9 @@ function pinyinslugs_min_wp_version() {
 	return $errors;
 }
 
-function pinyinslugs_check_admin_notices()
+function dbfw_check_admin_notices()
 {
-	$errors = pinyinslugs_min_wp_version();
+	$errors = dbfw_min_wp_version();
 
 	if ( empty ( $errors ) )
 		return;
@@ -76,7 +76,7 @@ function pinyinslugs_check_admin_notices()
 	// this plugin's name
 	$name = get_file_data( __FILE__, array ( 'Plugin Name' ), 'plugin' );
 
-	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'pinyinslugs' ),
+	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'dbfw' ),
 		join( '</p><p>', $errors ),
 		$name[0]
 	);
