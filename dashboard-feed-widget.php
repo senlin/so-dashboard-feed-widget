@@ -3,7 +3,7 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://wpti.ps/?p=189
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 1.0.5
+Version: 1.0.6
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
