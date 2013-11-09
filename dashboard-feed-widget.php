@@ -8,7 +8,8 @@ Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+Text Domain: dashboard-feed-widget
+Domain Path: /languages
 */
 
 /*  Copyright 2013  Piet Bos  (email : piethfbos@gmail.com)
@@ -76,7 +77,7 @@ function dbfw_check_admin_notices()
 	// this plugin's name
 	$name = get_file_data( __FILE__, array ( 'Plugin Name' ), 'plugin' );
 
-	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'dbfw' ),
+	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'dashboard-feed-widget' ),
 		join( '</p><p>', $errors ),
 		$name[0]
 	);
@@ -119,7 +120,7 @@ function dbfw_add_defaults() {
 		delete_option( 'dbfw_options' ); // so we don't have to reset all the 'off' checkboxes too! (don't think this is needed but leave for now)
 		
 		$arr = array(
-			'widget_title' => __( 'Recent Updates', 'dbfw' ),
+			'widget_title' => __( 'Recent Updates', 'dashboard-feed-widget' ),
 			'feed_url' => 'http://wpti.ps/feed/',
 			'drp_select_box' => '3',
 			'chk_default_options_db' => ''
@@ -146,7 +147,7 @@ function dbfw_init() {
 function dbfw_i18n() {
 
 	/* Load the translation of the plugin. */
-	load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 
 
@@ -169,9 +170,9 @@ function dbfw_render_form() { ?>
 		<!-- Display Plugin Icon, Header, and Description -->
 		<div class="icon32" id="icon-options-general"><br></div>
 		
-		<h2><?php _e( 'SO Dashboard Feed Widget Settings', 'dbfw' ); ?></h2>
+		<h2><?php _e( 'SO Dashboard Feed Widget Settings', 'dashboard-feed-widget' ); ?></h2>
 		
-		<p><?php _e( 'Below you can adjust the output of the SO Dashboard Feed Widget. You can change the title of the widget, the feed URL and the amount of feed items to show.', 'dbfw' ); ?></p>
+		<p><?php _e( 'Below you can adjust the output of the SO Dashboard Feed Widget. You can change the title of the widget, the feed URL and the amount of feed items to show.', 'dashboard-feed-widget' ); ?></p>
 
 		<!-- Beginning of the Plugin Options Form -->
 		<form method="post" action="options.php">
@@ -187,29 +188,29 @@ function dbfw_render_form() { ?>
 
 				<!-- Textbox Control -->
 				<tr>
-					<th scope="row"><?php _e( 'Widget Title', 'dbfw' ); ?></th>
+					<th scope="row"><?php _e( 'Widget Title', 'dashboard-feed-widget' ); ?></th>
 					<td>
 						<input type="text" size="57" name="dbfw_options[widget_title]" value="<?php echo $options['widget_title']; ?>" /><br />
 						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Change the title of the SO Dashboard Feed Widget into something of your liking', 'dbfw' ); ?>
+							<?php _e( 'Change the title of the SO Dashboard Feed Widget into something of your liking', 'dashboard-feed-widget' ); ?>
 						</span>
 					</td>
 				</tr>
 
 				<!-- Textbox Control -->
 				<tr>
-					<th scope="row"><?php _e( 'Feed URL', 'dbfw' ); ?></th>
+					<th scope="row"><?php _e( 'Feed URL', 'dashboard-feed-widget' ); ?></th>
 					<td>
 						<input type="text" size="57" name="dbfw_options[feed_url]" value="<?php echo $options['feed_url']; ?>" /><br />
 						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Change the feed-URL to a site of your choice', 'dbfw' ); ?>
+							<?php _e( 'Change the feed-URL to a site of your choice', 'dashboard-feed-widget' ); ?>
 						</span>
 					</td>
 				</tr>
 
 				<!-- Select Drop-Down Control -->
 				<tr>
-					<th scope="row"><?php _e( 'How many Feed Items to show in the SO Dashboard Feed Widget', 'dbfw' ); ?></th>
+					<th scope="row"><?php _e( 'How many Feed Items to show in the SO Dashboard Feed Widget', 'dashboard-feed-widget' ); ?></th>
 					<td>
 						<select name='dbfw_options[drp_select_box]'>
 							<option value='1' <?php selected( '1', $options['drp_select_box'] ); ?>>1</option>
@@ -224,7 +225,7 @@ function dbfw_render_form() { ?>
 							<option value='10' <?php selected( '10', $options['drp_select_box'] ); ?>>10</option>
 						</select>
 						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'How many feed items to show in the widget?', 'dbfw' ); ?>
+							<?php _e( 'How many feed items to show in the widget?', 'dashboard-feed-widget' ); ?>
 						</span>
 					</td>
 				</tr>
@@ -236,14 +237,14 @@ function dbfw_render_form() { ?>
 				</tr>
 				
 				<tr valign="top" style="border-top: 1px solid #DDD;">
-					<th scope="row"><?php _e( 'Database Options', 'dbfw' ); ?></th>
+					<th scope="row"><?php _e( 'Database Options', 'dashboard-feed-widget' ); ?></th>
 					<td>
 						<label>
 							<input name="dbfw_options[chk_default_options_db]" type="checkbox" value="1" <?php if ( isset($options['chk_default_options_db'] ) ) { checked( '1', $options['chk_default_options_db'] ); } ?> />
-								<?php _e( 'Restore defaults upon plugin deactivation/reactivation', 'dbfw' ); ?>
+								<?php _e( 'Restore defaults upon plugin deactivation/reactivation', 'dashboard-feed-widget' ); ?>
 						</label><br />
 						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Only check this if you want to reset plugin settings upon Plugin reactivation', 'dbfw' ); ?>
+							<?php _e( 'Only check this if you want to reset plugin settings upon Plugin reactivation', 'dashboard-feed-widget' ); ?>
 						</span>
 					</td>
 				</tr>
@@ -251,7 +252,7 @@ function dbfw_render_form() { ?>
 			</table>
 			
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'dbfw' ) ?>" />
+				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'dashboard-feed-widget' ) ?>" />
 			</p>
 		
 		</form>
@@ -260,7 +261,7 @@ function dbfw_render_form() { ?>
 			
 			<?php
 			/* Translators: 1 is link to WP Repo */
-			printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dbfw' ), 
+			printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dashboard-feed-widget' ), 
 				esc_url( 'http://wordpress.org/plugins/dashboard-feed-widget/' )
 			);
 			?>
@@ -270,13 +271,13 @@ function dbfw_render_form() { ?>
 		<div class="postbox" style="display: block; float: left; width: 500px; margin: 30px 10px 10px 0;">
 			
 			<h3 class="hndle" style="padding: 5px;">
-				<span><?php _e( 'About the Author', 'dbfw' ); ?></span>
+				<span><?php _e( 'About the Author', 'dashboard-feed-widget' ); ?></span>
 			</h3>
 			
 			<div class="inside">
 				<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float: left; margin-right: 10px; padding: 3px; border: 1px solid #DFDFDF;"/>
 				<p style="height: 60px; padding-top: 20px">
-					<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dbfw' ),
+					<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
 					esc_url( 'http://so-wp.github.io/' )
 					); ?>
 				</p>
@@ -284,11 +285,11 @@ function dbfw_render_form() { ?>
 				<ul style="clear: both; margin-top: 20px;">
 					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
 					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
-					<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dbfw' ); ?></a></li>
-					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dbfw' ); ?></a></li>
-					<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dbfw' ); ?></a></li>
-					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dbfw' ); ?></a></li>
-					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dbfw' ); ?></a></li>
+					<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
 				</ul>
 			
 			</div> <!-- end .inside -->
@@ -315,7 +316,7 @@ function dbfw_validate_options($input) {
 function dbfw_plugin_action_links( $links, $file ) {
 
 	if ( $file == plugin_basename( __FILE__ ) ) {
-		$dbfw_links = '<a href="' . get_admin_url() . 'options-general.php?page=dashboard-feed-widget/dashboard-feed-widget.php">' . __( 'Settings', 'dbfw' ) . '</a>';
+		$dbfw_links = '<a href="' . get_admin_url() . 'options-general.php?page=dashboard-feed-widget/dashboard-feed-widget.php">' . __( 'Settings', 'dashboard-feed-widget' ) . '</a>';
 		// make the 'Settings' link appear first
 		array_unshift( $links, $dbfw_links );
 	}

@@ -1,7 +1,7 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Version 1.0.5
+###### Version 1.0.6
 ###### requires at least WordPress 3.6
 ###### tested up to 3.7
 ###### Author: [Piet Bos](https://github.com/senlin)
@@ -84,6 +84,10 @@ This repo is open to _any_ kind of contributions.
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 1.0.6
+
+* change text domain to prepare for language packs (via Otto - http://otto42.com/el)
 
 ### 1.0.5
 
