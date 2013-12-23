@@ -3,7 +3,7 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://wpti.ps/?p=189
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 1.0.6
+Version: 2.0.0
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -85,31 +85,134 @@ function dbfw_check_admin_notices()
 }
 
 /**
- * Set-up Action and Filter Hooks
+ * Rewrite of the plugin
+ *
+ * @since 2.0.0
  */
-register_activation_hook( __FILE__, 'dbfw_add_defaults' );
-
-register_uninstall_hook( __FILE__, 'dbfw_delete_plugin_options' );
-
-add_action( 'admin_init', 'dbfw_init' );
-
-add_action( 'plugins_loaded', 'dbfw_i18n' );
-
-add_action( 'admin_menu', 'dbfw_add_options_page' );
-
-add_filter( 'plugin_action_links', 'dbfw_plugin_action_links', 10, 2 );
-
-/**
- * Delete options table entries ONLY when plugin deactivated AND deleted 
- */
-function dbfw_delete_plugin_options() {
+class DBFW_Load {
 	
-	delete_option( 'dbfw_options' );
+	function __construct() {
+
+		global $so_dbfw;
+
+		/* Set up an empty class for the global $so_dbfw object. */
+		$so_dbfw = new stdClass;
+
+		/* Set the init. */
+		add_action( 'admin_init', array( &$this, 'init' ), 1 );
+
+		/* Set the constants needed by the plugin. */
+		add_action( 'plugins_loaded', array( &$this, 'constants' ), 2 );
+
+		/* Internationalize the text strings used. */
+		add_action( 'plugins_loaded', array( &$this, 'i18n' ), 3 );
+
+		/* Load the functions files. */
+		add_action( 'plugins_loaded', array( &$this, 'includes' ), 4 );
+
+		/* Load the admin files. */
+		add_action( 'plugins_loaded', array( &$this, 'admin' ), 5 );
+
+	}
+	
+	/**
+	 * Init plugin options to white list our options
+	 *
+	 * @since 2.0.0
+	 */
+	function init() {
+		
+		register_setting( 'dbfw_plugin_options', 'dbfw_options', 'dbfw_validate_options' );
+		
+	}
+
+
+	/**
+	 * Defines constants used by the plugin.
+	 *
+	 * @since 2.0.0
+	 */
+	function constants() {
+
+		/* Set the version number of the plugin. */
+		define( 'SO_DBFW_VERSION', '2.0.0' );
+
+		/* Set constant path to the plugin directory. */
+		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+
+		/* Set constant path to the plugin URL. */
+		define( 'SO_DBFW_URI', trailingslashit( plugin_dir_url( __FILE__ ) ) );
+
+		/* Set the constant path to the inc directory. */
+		define( 'SO_DBFW_INCLUDES', SO_DBFW_DIR . trailingslashit( 'inc' ) );
+
+		/* Set the constant path to the admin directory. */
+		define( 'SO_DBFW_ADMIN', SO_DBFW_DIR . trailingslashit( 'admin' ) );
+
+	}
+
+	/**
+	 * Loads the translation file.
+	 *
+	 * @since 2.0.0
+	 */
+	function i18n() {
+
+		/* Load the translation of the plugin. */
+		load_plugin_textdomain( 'dashboard-feed-widget', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * Loads the initial files needed by the plugin.
+	 *
+	 * @since 2.0.0
+	 */
+	function includes() {
+
+		/* Load the plugin functions file. */
+		require_once( SO_DBFW_INCLUDES . 'functions.php' );
+	}
+
+	/**
+	 * Loads the admin functions and files.
+	 *
+	 * @since 2.0.0
+	 */
+	function admin() {
+
+		/* Only load files if in the WordPress admin. */
+		if ( is_admin() ) {
+
+			/* Load the main admin file. */
+			require_once( SO_DBFW_ADMIN . 'settings.php' );
+
+		}
+	}
 
 }
 
+$so_dbfw_load = new DBFW_Load();
+
+/**
+ * Register activation/deactivation hooks
+ * @since 0.1
+ */
+register_activation_hook( __FILE__, 'dbfw_add_defaults' ); 
+register_deactivation_hook( __FILE__, 'dbfw_delete_plugin_options' );
+
+add_action( 'admin_menu', 'dbfw_add_options_page' );
+
+function dbfw_add_options_page() {
+	// Add the new admin menu and page and save the returned hook suffix
+	$hook = add_options_page( 'SO Dashboard Feed Widget Settings', 'SO Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
+	// Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded
+	add_action( 'admin_print_styles-' . $hook , 'dbfw_load_settings_style' );
+}
+
+
 /**
  * Define default option settings
+ * @since 0.1
  */
 function dbfw_add_defaults() {
 	
@@ -131,177 +234,41 @@ function dbfw_add_defaults() {
 }
 
 /**
- * Init plugin options to white list our options
+ * Delete options table entries ONLY when plugin deactivated AND deleted 
+ * @since 0.1
  */
-function dbfw_init() {
+function dbfw_delete_plugin_options() {
 	
-	register_setting( 'dbfw_plugin_options', 'dbfw_options', 'dbfw_validate_options' );
-	
-}
-
-/**
- * Loads the translation files.
- *
- * @since 1.0.5
- */
-function dbfw_i18n() {
-
-	/* Load the translation of the plugin. */
-	load_plugin_textdomain( 'dbfw', false, basename( dirname( __FILE__ ) ) . '/languages/' );
-}
-
-
-/**
- * Add menu page
- */
-function dbfw_add_options_page() {
-	
-	add_options_page( 'SO Dashboard Feed Widget Settings', 'SO Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
+	delete_option( 'dbfw_options' );
 
 }
 
 /**
- * Render the Plugin options form
+ * Register and enqueue the settings stylesheet
+ * @since 2.0.0
  */
-function dbfw_render_form() { ?>
+function dbfw_load_settings_style() {
 
-	<div class="wrap">
-		
-		<!-- Display Plugin Icon, Header, and Description -->
-		<div class="icon32" id="icon-options-general"><br></div>
-		
-		<h2><?php _e( 'SO Dashboard Feed Widget Settings', 'dashboard-feed-widget' ); ?></h2>
-		
-		<p><?php _e( 'Below you can adjust the output of the SO Dashboard Feed Widget. You can change the title of the widget, the feed URL and the amount of feed items to show.', 'dashboard-feed-widget' ); ?></p>
+	wp_register_style( 'custom_dbfw_settings_css', SO_DBFW_URI . 'css/settings.css', false, SO_DBFW_VERSION );
 
-		<!-- Beginning of the Plugin Options Form -->
-		<form method="post" action="options.php">
-			
-			<?php settings_fields( 'dbfw_plugin_options' ); ?>
-			
-			<?php $options = get_option( 'dbfw_options' ); ?>
+	wp_enqueue_style( 'custom_dbfw_settings_css' );
 
-			<!-- Table Structure Containing Form Controls -->
-			<!-- Each Plugin Option Defined on a New Table Row -->
-			
-			<table class="form-table">
+}
 
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row"><?php _e( 'Widget Title', 'dashboard-feed-widget' ); ?></th>
-					<td>
-						<input type="text" size="57" name="dbfw_options[widget_title]" value="<?php echo $options['widget_title']; ?>" /><br />
-						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Change the title of the SO Dashboard Feed Widget into something of your liking', 'dashboard-feed-widget' ); ?>
-						</span>
-					</td>
-				</tr>
+/**
+ * Set-up Action and Filter Hooks
+ * @since 0.1
+ */
+add_filter( 'plugin_action_links', 'dbfw_plugin_action_links', 10, 2 );
 
-				<!-- Textbox Control -->
-				<tr>
-					<th scope="row"><?php _e( 'Feed URL', 'dashboard-feed-widget' ); ?></th>
-					<td>
-						<input type="text" size="57" name="dbfw_options[feed_url]" value="<?php echo $options['feed_url']; ?>" /><br />
-						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Change the feed-URL to a site of your choice', 'dashboard-feed-widget' ); ?>
-						</span>
-					</td>
-				</tr>
+add_action( 'wp_dashboard_setup', 'dbfw_setup_function' ); // Register the new dashboard widget into the 'wp_dashboard_setup' action
 
-				<!-- Select Drop-Down Control -->
-				<tr>
-					<th scope="row"><?php _e( 'How many Feed Items to show in the SO Dashboard Feed Widget', 'dashboard-feed-widget' ); ?></th>
-					<td>
-						<select name='dbfw_options[drp_select_box]'>
-							<option value='1' <?php selected( '1', $options['drp_select_box'] ); ?>>1</option>
-							<option value='2' <?php selected( '2', $options['drp_select_box'] ); ?>>2</option>
-							<option value='3' <?php selected( '3', $options['drp_select_box'] ); ?>>3</option>
-							<option value='4' <?php selected( '4', $options['drp_select_box'] ); ?>>4</option>
-							<option value='5' <?php selected( '5', $options['drp_select_box'] ); ?>>5</option>
-							<option value='6' <?php selected( '6', $options['drp_select_box'] ); ?>>6</option>
-							<option value='7' <?php selected( '7', $options['drp_select_box'] ); ?>>7</option>
-							<option value='8' <?php selected( '8', $options['drp_select_box'] ); ?>>8</option>
-							<option value='9' <?php selected( '9', $options['drp_select_box'] ); ?>>9</option>
-							<option value='10' <?php selected( '10', $options['drp_select_box'] ); ?>>10</option>
-						</select>
-						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'How many feed items to show in the widget?', 'dashboard-feed-widget' ); ?>
-						</span>
-					</td>
-				</tr>
+add_action( 'admin_enqueue_scripts', 'dbfw_load_custom_admin_style' );
 
-				<tr>
-					<td colspan="2">
-						<div style="margin-top: 10px;"></div>
-					</td>
-				</tr>
-				
-				<tr valign="top" style="border-top: 1px solid #DDD;">
-					<th scope="row"><?php _e( 'Database Options', 'dashboard-feed-widget' ); ?></th>
-					<td>
-						<label>
-							<input name="dbfw_options[chk_default_options_db]" type="checkbox" value="1" <?php if ( isset($options['chk_default_options_db'] ) ) { checked( '1', $options['chk_default_options_db'] ); } ?> />
-								<?php _e( 'Restore defaults upon plugin deactivation/reactivation', 'dashboard-feed-widget' ); ?>
-						</label><br />
-						<span style="color: #666; margin-left: 2px;">
-							<?php _e( 'Only check this if you want to reset plugin settings upon Plugin reactivation', 'dashboard-feed-widget' ); ?>
-						</span>
-					</td>
-				</tr>
-			
-			</table>
-			
-			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Settings', 'dashboard-feed-widget' ) ?>" />
-			</p>
-		
-		</form>
-
-		<p style="font-style: italic; font-weight: bold; color: #26779A;">
-			
-			<?php
-			/* Translators: 1 is link to WP Repo */
-			printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dashboard-feed-widget' ), 
-				esc_url( 'http://wordpress.org/plugins/dashboard-feed-widget/' )
-			);
-			?>
-			
-		</p>
-		
-		<div class="postbox" style="display: block; float: left; width: 500px; margin: 30px 10px 10px 0;">
-			
-			<h3 class="hndle" style="padding: 5px;">
-				<span><?php _e( 'About the Author', 'dashboard-feed-widget' ); ?></span>
-			</h3>
-			
-			<div class="inside">
-				<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float: left; margin-right: 10px; padding: 3px; border: 1px solid #DFDFDF;"/>
-				<p style="height: 60px; padding-top: 20px">
-					<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
-					esc_url( 'http://so-wp.github.io/' )
-					); ?>
-				</p>
-				
-				<ul style="clear: both; margin-top: 20px;">
-					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
-					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
-					<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
-				</ul>
-			
-			</div> <!-- end .inside -->
-		
-		</div> <!-- end .postbox -->
-
-	</div> <!-- end .wrap -->
-
-<?php }
 
 /**
  * Sanitize and validate input. Accepts an array, return a sanitized array.
+ * @since 0.1
  */
 function dbfw_validate_options($input) {
 	// strip html from textboxes
@@ -324,80 +291,17 @@ function dbfw_plugin_action_links( $links, $file ) {
 	return $links;
 }
 
+
 /**
- * Add Feed Dashboard Widget, finally the actual code that grabs the feed and loops through it to output it
+ * Register and enqueue the admin stylesheet
+ * @since 2.0.0
  */
-function dbfw_setup_function() {
-	$options = get_option( 'dbfw_options' );
-	$widgettitle = $options['widget_title'];
-	add_meta_box( 'dbfw_widget',  $widgettitle, 'dbfw_widget_function', 'dashboard', 'normal', 'high' );
+function dbfw_load_custom_admin_style( $hook ) {
+    if( 'index.php' != $hook )
+    	return;
+	wp_register_style( 'custom_dbfw_admin_css', SO_DBFW_URI . 'css/style.css', false, SO_DBFW_VERSION );
+	wp_enqueue_style( 'custom_dbfw_admin_css' );
 }
 
-function dbfw_widget_function() {
-	$options = get_option( 'dbfw_options' );
-	$feedurl = $options['feed_url'];
-	$select = $options['drp_select_box'];
-
-	$rss = fetch_feed($feedurl);
-	
-	if ( ! is_wp_error( $rss ) ) { // Checks that the object is created correctly
-		
-		// Figure out how many total items there are, but limit it to 3.
-		$maxitems = $rss->get_item_quantity( $select );
-		
-		// Build an array of all the items, starting with element 0 (first element).
-		$rss_items = $rss->get_items( 0, $maxitems );
-	}
-	
-	if ( ! empty( $maxitems ) ) { ?>
-	
-		<div class="rss-widget">
-
-			<ul>
-				<?php
-				// Loop through each feed item and display each item as a hyperlink.
-				foreach ( $rss_items as $item ) { ?>
-				    
-					<li>
-						<a class="rsswidget" href='<?php echo $item->get_permalink(); ?>'><?php echo $item->get_title(); ?></a>
-						
-						<span class="rss-date"><?php echo $item->get_date( 'j F Y' ); ?></span>
-					</li>
-
-				<?php } ?>
-			
-			</ul>
-		
-		</div> <!-- end .rss-widget -->
-
-	<?php }
-	// This makes sure that the positioning is also correct for right-to-left languages
-	$x = is_rtl() ? 'left' : 'right'; 
-	echo '<style type="text/css">#dbfw_widget { float: $x; }</style>';
-}
-
-
-/**
- * Register the new dashboard widget into the 'wp_dashboard_setup' action
- */
-add_action( 'wp_dashboard_setup', 'dbfw_setup_function' );
-
-/**
- * Adds stylesheet
- */
-add_action( 'admin_print_styles', 'dbfw_load_custom_admin_css' );
-
-
-/**
- * And now enqueue the stylesheet
- */
-function dbfw_load_custom_admin_css() {
-	
-	wp_enqueue_style( 'dbfw_custom_admin_css', plugins_url( '/style.css', __FILE__ ) );
-
-}
-
-/**
- * The End
- */
+/** The End **/
 ?>

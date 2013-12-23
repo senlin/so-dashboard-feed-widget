@@ -3,8 +3,8 @@ Contributors: senlin
 Donate link: http://senl.in/PPd0na
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 3.6
-Tested up to: 3.7
-Stable tag: 1.0.6
+Tested up to: 3.8
+Stable tag: 2.0.0
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -69,10 +69,14 @@ Please open an issue over at [Github](https://github.com/so-wp/so-dashboard-feed
 
 == Changelog ==
 
+= 2.0.0 =
+
+* complete reorganisation of the plugin files
+* compatible up to WP 3.8
+
 = 1.0.6 =
 
 * change text domain to prepare for language packs (via Otto - http://otto42.com/el)
-
 
 = 1.0.5 =
 * Compatible up to WP 3.7

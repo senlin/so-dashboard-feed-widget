@@ -1,9 +1,9 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Version 1.0.6
+###### Version 2.0.0
 ###### requires at least WordPress 3.6
-###### tested up to 3.7
+###### tested up to 3.8
 ###### Author: [Piet Bos](https://github.com/senlin)
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -84,6 +84,11 @@ This repo is open to _any_ kind of contributions.
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 2.0.0
+
+* complete reorganisation of the plugin files
+* compatible up to WP 3.8
 
 ### 1.0.6
 

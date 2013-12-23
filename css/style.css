@@ -1,0 +1,4 @@
+/* Styles for the dashboard (wp-admin/index.php) for the SO Dashboard Feed Widget */
+#dbfw_widget.postbox .handlediv { display: none; }
+#dbfw_widget { background: #FF9; }
+#dbfw_widget a:hover, #dbfw_widget a:active, #dbfw_widget a:focus { color: #036; }
