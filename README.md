@@ -3,7 +3,7 @@ SO Dashboard Feed Widget
 
 ###### Version 2013.12.23
 ###### requires at least WordPress 3.6
-###### tested up to 3.8.1
+###### tested up to WordPress 3.8.1
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/plugin/so-dashboard-feed-widget)
