@@ -1,10 +1,12 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Version 2.0.0
+###### Version 2013.12.23
 ###### requires at least WordPress 3.6
-###### tested up to 3.8
+###### tested up to 3.8.1
 ###### Author: [Piet Bos](https://github.com/senlin)
+###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
+###### [Plugin homepage](http://so-wp.com/plugin/so-dashboard-feed-widget)
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
@@ -24,41 +26,21 @@ Current translations:
 
 * Dutch (by myself)
 
-I have decided to only support this plugin through <a href="https://github.com/so-wp/so-dashboard-feed-widget/issues" rel="nofollow">Github</a>. Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
+I have decided to only support this plugin through <a href="https://github.com/senlin/so-dashboard-feed-widget/issues" rel="nofollow">Github</a>. Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
 <strong>PLEASE DO NOT POST YOUR ISSUES VIA THE WORDPRESS FORUMS BUT ON GITHUB INSTEAD</strong>
  
 Thanks for your understanding and cooperation.
 
-## Installation
-
-Quick installation: [Install now](http://coveredwebservices.com/wp-plugin-install/?plugin=dashboard-feed-widget) !
-
- &hellip; OR &hellip;
-
-Go to **Plugins > Add New** in your WordPress Dashboard, do a search for "so dashboard feed widget" and install it.
-
- &hellip; OR &hellip;
-
-Follow these steps:
-
- 1. Download zip file.
-
- 2. Upload the zip file via the Plugins > Add New > Upload page &hellip; OR &hellip; unpack and upload with your favourite FTP client to the /plugins/ folder.
-
- 3. Activate the plugin on the Plug-ins page.
-
-Done!
-
 ## Frequently Asked Questions
 
-### Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite? =
+### Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite?
 
-For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](https://github.com/so-wp/so-multisite-dashboard-feed-widget) that I developed a while back and which is also compatible with the latest version of WordPress.
+For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](https://github.com/senlin/so-multisite-dashboard-feed-widget) that I developed a while back and which is also compatible with the latest version of WordPress.
 
 ### I have an issue with this plugin, where can I get support?
 
-Please open an issue here on [Github](https://github.com/so-wp/so-dashboard-feed-widget/issues)
+Please open an issue here on [Github](https://github.com/senlin/so-dashboard-feed-widget/issues)
 
 ## Contributions
 
@@ -71,19 +53,25 @@ This repo is open to _any_ kind of contributions.
 
 ## Donations
 
-* Donate link: http://senl.in/PPd0na
+* Donate link: http://so-wp.com/donations/
 
 ## Connect with me through
 
 [Github](https://github.com/senlin) 
 
-[Google+](http://plus.google.com/u/0/108543145122756748887) 
+[Google+](http://plus.google.com/+PietBos) 
 
 [WordPress](http://profiles.wordpress.org/senlin/) 
 
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### upcoming version
+
+* new version number format
+* compatible up to WP 3.8.1
+* changed Github & homepage links
 
 ### 2.0.0
 
