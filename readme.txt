@@ -17,6 +17,7 @@ The default settings are:<br />
 - the standard title of the widget box is "Recent Updates"<br />
 - as I needed a default feed URL I used the feed of WP TIPS, one of my own websites<br />
 - the default number of RSS items is 3
+- yellow background color of the widget (`#FFFF99`)
 
 The plugin comes localized for use on sites other than the English language and/or on bi/multilingual websites. In the languages folder you will find the .po and .mo files. Feel free to send me translations in other languages, I will then add them to this folder and of course I will credit you here.
 
