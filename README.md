@@ -69,7 +69,7 @@ This repo is open to _any_ kind of contributions.
 * new links pointing to [SO-WP.com](http://so-wp.com)
 * new version number format
 * removed dashboard link hover color
-* added option to change yellow background color of widget [#1]
+* added option to change yellow background color of widget [#1](https://github.com/senlin/so-dashboard-feed-widget/issues/1)
 * moved RTL-style to new `dbfw_style_function`
 * update language files
 
