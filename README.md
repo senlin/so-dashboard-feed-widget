@@ -1,12 +1,12 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Version 2013.12.23
+###### Last updated 2013.12.26
 ###### requires at least WordPress 3.6
-###### tested up to WordPress 3.8.1
+###### tested up to WordPress 3.9-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
-###### [Plugin homepage](http://so-wp.com/plugin/so-dashboard-feed-widget)
+###### [Plugin homepage](http://so-wp.com/?p=15)
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
@@ -26,12 +26,8 @@ Current translations:
 
 * Dutch (by myself)
 
-I have decided to only support this plugin through <a href="https://github.com/senlin/so-dashboard-feed-widget/issues" rel="nofollow">Github</a>. Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
+I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
-<strong>PLEASE DO NOT POST YOUR ISSUES VIA THE WORDPRESS FORUMS BUT ON GITHUB INSTEAD</strong>
- 
-Thanks for your understanding and cooperation.
-
 ## Frequently Asked Questions
 
 ### Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite?
@@ -67,11 +63,15 @@ This repo is open to _any_ kind of contributions.
 
 ## Changelog
 
-### upcoming version
+### 2013.12.26
 
+* tested up to WP 3.9-alpha
+* new links pointing to [SO-WP.com](http://so-wp.com)
 * new version number format
-* compatible up to WP 3.8.1
-* changed Github & homepage links
+* removed dashboard link hover color
+* added option to change yellow background color of widget [#1]
+* moved RTL-style to new `dbfw_style_function`
+* update language files
 
 ### 2.0.0
 

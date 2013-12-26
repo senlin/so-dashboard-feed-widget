@@ -51,8 +51,18 @@ function dbfw_widget_function() {
 		</div> <!-- end .rss-widget -->
 
 	<?php }
-	// This makes sure that the positioning is also correct for right-to-left languages
-	$x = is_rtl() ? 'left' : 'right'; 
-	echo '<style type="text/css">#dbfw_widget { float: $x; }</style>';
 }
 
+function dbfw_style_function() {
+	$options = get_option( 'dbfw_options' );
+	$bkgr = $options['widget_bkgr'];
+	
+	// This makes sure that the positioning is also correct for right-to-left languages
+	$x = is_rtl() ? 'left' : 'right';
+   
+   echo '<style type="text/css">
+           #dbfw_widget{background:#' . $bkgr . ';float:' . $x . ';}
+         </style>';
+}
+
+add_action( 'admin_head', 'dbfw_style_function' );

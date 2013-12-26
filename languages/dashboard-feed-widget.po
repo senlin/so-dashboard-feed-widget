@@ -34,6 +34,16 @@ msgid "Feed URL"
 msgstr ""
 
 #. Text in echo
+#: settings.php:85
+msgid "Widget Background Color"
+msgstr ""
+
+#. Text in echo
+#: settings.php:90
+msgid "Change the background color of the widget (3 or 6 digit HEX code without the #)"
+msgstr ""
+
+#. Text in echo
 #: dashboard-feed-widget.php:249
 msgid "Github"
 msgstr ""

@@ -1,10 +1,10 @@
 === SO Dashboard Feed Widget ===
 Contributors: senlin
-Donate link: http://senl.in/PPd0na
+Donate link: http://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 2.0.0
+Tested up to: 3.9-alpha
+Stable tag: 2013.12.26
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -23,7 +23,7 @@ The plugin comes localized for use on sites other than the English language and/
 Current translations:<br />
 - Dutch (by myself)
 
-I have decided to only support this plugin through <a href="https://github.com/so-wp/so-dashboard-feed-widget/issues" rel="nofollow">Github</a>. Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue over at Github. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
+I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue over at Github. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
 <strong>PLEASE DO NOT POST YOUR ISSUES VIA THE WORDPRESS FORUMS BUT ON GITHUB INSTEAD</strong>
  
@@ -60,7 +60,7 @@ For now it doesn't for reasons I do not know yet, but I'm looking into. If you w
 
 = I have an issue with this plugin, where can I get support? =
 
-Please open an issue over at [Github](https://github.com/so-wp/so-dashboard-feed-widget/issues/new), as **I will not use the support forums** here on WordPress.org
+Please open an issue over at [Github](https://github.com/senlin/so-dashboard-feed-widget/issues/new), as **I will not use the support forums** here on WordPress.org
 
 == Screenshots ==
 
@@ -68,6 +68,16 @@ Please open an issue over at [Github](https://github.com/so-wp/so-dashboard-feed
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2013.12.26 =
+
+* tested up to WP 3.9-alpha
+* new links pointing to [SO-WP.com](http://so-wp.com/)
+* new version number format
+* removed dashboard link hover color
+* added option to change yellow background color of widget
+* moved RTL-style to new `dbfw_style_function`
+* update language files
 
 = 2.0.0 =
 

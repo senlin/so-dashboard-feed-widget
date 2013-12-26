@@ -79,6 +79,24 @@ function dbfw_render_form() { ?>
 					<input type="hidden" name="page_options" value="<?php echo $options['drp_select_box']; ?>" />
 				
 				</div>
+
+				<div class="dbfw-section dbfw-section-bkgr">
+				
+					<label for="dbfw-bkgr-color"><?php _e( 'Widget Background Color', 'dashboard-feed-widget' ); ?></label>
+				
+					<input name="dbfw_options[widget_bkgr]" type="text" id="dbfw-bkgr-color" value="<?php echo $options['widget_bkgr']; ?>" />
+								
+					<span class="hint">
+						<?php _e( 'Change the background color of the widget (3 or 6 digit HEX code without the #)', 'dashboard-feed-widget' ); ?>
+					</span>
+				
+					<input type="hidden" name="action" value="update" />
+				
+					<input type="hidden" name="page_options" value="<?php echo $options['widget_bkgr']; ?>" />
+				
+				</div>
+	
+
 				
 				<hr />
 				
@@ -129,16 +147,16 @@ function dbfw_render_form() { ?>
 				<img src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" style="float: left; margin-right: 10px; padding: 3px; border: 1px solid #DFDFDF;"/>
 				<p>
 					<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
-					esc_url( 'http://so-wp.github.io/' )
+					esc_url( 'http://so-wp.com' )
 					); ?>
 				</p>
 				
 				<ul>
 					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dbfw'); ?></a></li>
 					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dbfw'); ?></a></li>
-					<li><a href="https://plus.google.com/108543145122756748887" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://plus.google.com/+PietBos" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://twitter.com/SenlinOnline" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://twitter.com/piethfbos" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
 				</ul>

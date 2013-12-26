@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: SO Dashboard Feed Widget
-Plugin URI: http://wpti.ps/?p=189
+Plugin URI: http://so-wp.com/?p=15
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2.0.0
+Version: 2013.12.26
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -135,7 +135,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2.0.0' );
+		define( 'SO_DBFW_VERSION', '2013.12.26' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -226,6 +226,7 @@ function dbfw_add_defaults() {
 			'widget_title' => __( 'Recent Updates', 'dashboard-feed-widget' ),
 			'feed_url' => 'http://wpti.ps/feed/',
 			'drp_select_box' => '3',
+			'widget_bkgr' => 'FF9',
 			'chk_default_options_db' => ''
 		);
 		
@@ -274,6 +275,7 @@ function dbfw_validate_options($input) {
 	// strip html from textboxes
 	$input['widget_title'] =  wp_filter_nohtml_kses( $input['widget_title'] ); // Sanitize input (strip html tags, and escape characters)
 	$input['feed_url'] =  wp_filter_nohtml_kses( $input['feed_url'] ); // Sanitize input (strip html tags, and escape characters)
+	$input['widget_bkgr'] =  wp_filter_nohtml_kses( $input['widget_bkgr'] ); // Sanitize input (strip html tags, and escape characters)
 	return $input;
 }
 
