@@ -53,16 +53,21 @@ function dbfw_widget_function() {
 	<?php }
 }
 
+/* @since 2013.12.26 */
 function dbfw_style_function() {
 	$options = get_option( 'dbfw_options' );
-	$bkgr = $options['widget_bkgr'];
 	
-	// This makes sure that the positioning is also correct for right-to-left languages
-	$x = is_rtl() ? 'left' : 'right';
+	/* @since 2013.12.28 */
+	$bkgr = isset( $options['widget_bkgr'] ) ? $options['widget_bkgr'] : 'FF9';
+	
+	// This makes sure that the positioning is also correct for right-to-left languages - changed order @since 2013.12.28
+	$x = is_rtl() ? 'right' : 'left';
    
-   echo '<style type="text/css">
-           #dbfw_widget{background:#' . $bkgr . ';float:' . $x . ';}
-         </style>';
+	/* @since 2013.12.28 - fixed RTL styling */
+	echo '<style type="text/css">
+		#dbfw_widget{background:#' . $bkgr . ';}
+		#dbfw_widget.postbox h3, #dbfw_widget.postbox .rss-widget {text-align:' . $x . ';}
+		</style>';
 }
 
 add_action( 'admin_head', 'dbfw_style_function' );
