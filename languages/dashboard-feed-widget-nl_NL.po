@@ -9,7 +9,7 @@ msgstr ""
 "Language-Team: Piet Bos <piet@senlinonline.com>\n"
 "MIME-Version: 1.0\n"
 "Language: nl_NL\n"
-"X-Generator: Poedit 1.6.1\n"
+"X-Generator: Poedit 1.6.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #. Text in echo
@@ -21,12 +21,12 @@ msgstr "Over de Auteur"
 #: dashboard-feed-widget.php:131
 msgid ""
 "Below you can adjust the output of the SO Dashboard Feed Widget. You can "
-"change the title of the widget, the feed URL and the amount of feed items to "
-"show."
+"change the title of the widget, the feed URL, the amount of feed items to "
+"show and the background color of the widget."
 msgstr ""
 "Hieronder kan je de output van de SO Dashboard Feed Widget aanpassen. Je kan "
-"de titel van de widget veranderen, de URL van de feed en het aantal feed "
-"items."
+"de titel van de widget veranderen, de URL van de feed, het aantal feed items "
+"en de achtergrondkleur van de widget."
 
 #. Text in echo
 #: dashboard-feed-widget.php:162
