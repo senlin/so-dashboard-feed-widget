@@ -80,7 +80,7 @@ function dbfw_render_form() { ?>
 						</th>
 						
 						<td>
-							<input name="dbfw_options[widget_bkgr]" type="number" id="dbfw-bkgr-color" class="small-text" value="<?php echo $options['widget_bkgr']; ?>" />
+							<input name="dbfw_options[widget_bkgr]" type="text" id="dbfw-bkgr-color" class="code" value="<?php echo $options['widget_bkgr']; ?>" />
 							<p class="description"><?php _e( 'Change the background color of the widget (3 or 6 digit HEX code without the #)', 'dashboard-feed-widget' ); ?></p>
 							<input type="hidden" name="action" value="update" />
 							<input type="hidden" name="page_options" value="<?php echo $options['widget_bkgr']; ?>" />								

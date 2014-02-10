@@ -13,16 +13,18 @@ The SO Dashboard Feed Widget shows the latest Posts from a site of your choice i
 
 On websites I develop for clients I always add this widget to their WordPress Dashboard to keep them informed on general updates regarding their websites. I thought it would be a handy tool for other developers, so I turned my widget into a plugin.
 
-The default settings are:<br />
-- the standard title of the widget box is "Recent Updates"<br />
-- as I needed a default feed URL I used the feed of WP TIPS, one of my own websites<br />
-- the default number of RSS items is 3
-- yellow background color of the widget (`#FFFF99`)
+The default settings are:
+
+* the standard title of the widget box is "Recent Updates"
+* as I needed a default feed URL I used the feed of WP TIPS, one of my own websites
+* the default number of RSS items is 3
+* yellow background color of the widget (`#FFFF99`)
 
 The plugin comes localized for use on sites other than the English language and/or on bi/multilingual websites. In the languages folder you will find the .po and .mo files. Feel free to send me translations in other languages, I will then add them to this folder and of course I will credit you here.
 
-Current translations:<br />
-- Dutch (by myself)
+Current translations:
+
+* Dutch (by myself)
 
 I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue over at Github. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
