@@ -2,6 +2,7 @@
  * Settings Page styles
  * 
  * @since 2.0.0
+ * @modified 2014.02.10 to fit 3.8 styling
  */
 .wrap > h2 {
 	background: url("../images/so-icon.png") no-repeat scroll 0 10px rgba(0, 0, 0, 0);
@@ -14,52 +15,41 @@
 .dbfw-section-dbchk {
     margin-top: 20px;
 }
-.dbfw-section label {
-    float: left;
-    font-size: 14px;
-    font-weight: 600;
-    width: 300px;
-}
-.dbfw-section .hint {
-	color: #666;
-}
-.dbfw-section-dbchk .hint {
-    display: block;
-}
 hr {
     color: #EFEFEF;
 }
 .rate-this-plugin {
-	color: #26779A;
+	color: #0074A2;
 	font-style: italic;
 	font-size: 16px;
-	font-weight: bold; 
+}
+.support {
+	font-size: 16px;
 }
 .author.postbox {
-	display: block;
-	float: left;
-	margin: 30px 10px 10px 0;
-	width: 500px;
+	max-width: 500px;
 }
 .author.postbox .hndle {
-    background: #26779A;
     border-bottom: 1px solid #DDD;
-    color: #F9F9F9;
+    margin-bottom: 0;
     padding: 5px;
 }
-.author.postbox .inside > .author-image {
+.author.postbox .inside {
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+.author.postbox .inside .top {
+    min-height: 90px;
+}
+.author.postbox .inside > .top > .author-image {
 	border: 1px solid #DFDFDF;
 	float: left;
 	margin-right: 10px;
 	padding: 3px;
 }
-.author.postbox .inside > p {
-	height: 60px;
-	padding-top: 20px;
-}
 .author.postbox .inside > ul {
 	clear: both;
-	margin-top: 20px;
 }
 .author.postbox .inside li {
     float: left;

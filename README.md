@@ -1,7 +1,7 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Last updated 2013.12.28
+###### Last updated 2014.02.10
 ###### requires at least WordPress 3.6
 ###### tested up to WordPress 3.9-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
@@ -63,6 +63,14 @@ This repo is open to _any_ kind of contributions.
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 2014.02.10
+
+* modified settings page and styling to better fit WP 3.8
+* i18n date output
+* removed line break between title and date
+* updated settings icon
+* updated screenshots
 
 ### 2013.12.28
 

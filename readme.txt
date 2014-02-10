@@ -4,7 +4,7 @@ Donate link: http://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 3.6
 Tested up to: 3.9-alpha
-Stable tag: 2013.12.28
+Stable tag: 2014.02.10
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -34,10 +34,6 @@ Thanks for your understanding and cooperation.
 
 = Wordpress =
 
-Quick installation: [Install now](http://coveredwebservices.com/wp-plugin-install/?plugin=dashboard-feed-widget) !
-
- &hellip; OR &hellip;
-
 Search for "SO Dashboard Feed Widget" and install with the **Plugins > Add New** back-end page.
 
  &hellip; OR &hellip;
@@ -46,11 +42,11 @@ Follow these steps:
 
 1. Download zip file.
 2. Upload the zip file via the Plugins > Add New > Upload page &hellip; OR &hellip; unpack and upload with your favorite FTP client to the /plugins/ folder.
-3. Activate the plugin on the Plug-ins page.
+3. Activate the plugin on the Plugins page.
 
 Done!
 
-On the Settings page you can change the widget title, the feed URL and the number of feed items. You will also see a checkbox that resets the settings back to the default settings when deactivating and then reactivating the plugin again.
+On the Settings page you can change the widget title, the feed URL, the number of feed items and the background color of the widget. You will also see a checkbox that resets the settings back to the default settings when deactivating and then reactivating the plugin again.
 
 After saving the settings, you can see the results in the main WordPress Dashboard.
 
@@ -69,6 +65,14 @@ Please open an issue over at [Github](https://github.com/senlin/so-dashboard-fee
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2014.02.10 =
+
+* modified settings page and styling to better fit WP 3.8
+* i18n date output
+* removed line break between title and date
+* updated settings icon
+* updated screenshots
 
 = 2013.12.28 =
 

@@ -18,7 +18,7 @@ function dbfw_widget_function() {
 	$feedurl = $options['feed_url'];
 	$select = $options['drp_select_box'];
 
-	$rss = fetch_feed($feedurl);
+	$rss = fetch_feed( $feedurl );
 	
 	if ( ! is_wp_error( $rss ) ) { // Checks that the object is created correctly
 		
@@ -39,9 +39,9 @@ function dbfw_widget_function() {
 				foreach ( $rss_items as $item ) { ?>
 				    
 					<li>
-						<a class="rsswidget" href='<?php echo $item->get_permalink(); ?>'><?php echo $item->get_title(); ?></a><br />
+						<a class="rsswidget" href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a>
 						
-						<span class="rss-date"><?php echo $item->get_date( 'j F Y' ); ?></span>
+						<span class="rss-date"><?php echo date_i18n('F j, Y', $item->get_date('U')); ?></span>
 					</li>
 
 				<?php } ?>
