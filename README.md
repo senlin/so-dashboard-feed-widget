@@ -1,9 +1,9 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Last updated 2014.02.10
-###### requires at least WordPress 3.6
-###### tested up to WordPress 3.9-alpha
+###### Last updated 2014.07.27
+###### requires at least WordPress 3.8
+###### tested up to WordPress 4.0-beta-2
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/?p=15)
@@ -63,6 +63,16 @@ This repo is open to _any_ kind of contributions.
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 2014.07.27
+
+* [feature request](https://github.com/senlin/so-dashboard-feed-widget/issues/6) add option to open the links of the dashboard feed in a new tab
+* bump minimum required WP version up to 3.8
+
+### 2014.04.17
+
+* compatible up to WP 3.9
+* move minimum WP version upwards to 3.7
 
 ### 2014.02.10
 

@@ -2,9 +2,9 @@
 Contributors: senlin
 Donate link: http://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
-Requires at least: 3.6
-Tested up to: 3.9-alpha
-Stable tag: 2014.02.10
+Requires at least: 3.8
+Tested up to: 4.0-beta-2
+Stable tag: 2014.07.27
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -18,6 +18,7 @@ The default settings are:
 * the standard title of the widget box is "Recent Updates"
 * as I needed a default feed URL I used the feed of WP TIPS, one of my own websites
 * the default number of RSS items is 3
+* do not open link in new tab (since 2014.07.27)
 * yellow background color of the widget (`#FFFF99`)
 
 The plugin comes localized for use on sites other than the English language and/or on bi/multilingual websites. In the languages folder you will find the .po and .mo files. Feel free to send me translations in other languages, I will then add them to this folder and of course I will credit you here.
@@ -55,6 +56,7 @@ After saving the settings, you can see the results in the main WordPress Dashboa
 == Frequently Asked Questions ==
 
 = Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite? =
+
 For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](http://wordpress.org/plugins/multisite-dashboard-feed-widget/) that I developed a while back and which is also compatible with the latest version of WordPress.
 
 = I have an issue with this plugin, where can I get support? =
@@ -67,6 +69,16 @@ Please open an issue over at [Github](https://github.com/senlin/so-dashboard-fee
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2014.07.27 =
+
+* [feature request](https://github.com/senlin/so-dashboard-feed-widget/issues/6) add option to open the links of the dashboard feed in a new tab
+* bump minimum required WP version up to 3.8
+
+= 2014.04.17 =
+
+* compatible up to WP 3.9
+* move minimum WP version upwards to 3.7
 
 = 2014.02.10 =
 

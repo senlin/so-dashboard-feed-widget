@@ -14,15 +14,29 @@ function dbfw_setup_function() {
 }
 
 function dbfw_widget_function() {
-	$options = get_option( 'dbfw_options' );
+	$options = get_option( 'dbfw_options' ); 
 	$feedurl = $options['feed_url'];
 	$select = $options['drp_select_box'];
+	
+	/**
+	 * superhack to get rid of Undefined index: newtab notice when box is unchecked.
+	 *
+	 * @source: php.net/manual/en/function.count.php
+	 */
+	$numberofoptions = count( $options );
+	
+	if( $numberofoptions == 5 ) { // newtab checkbox is ticked "Yes"
+		$target = '_blank';
+	} else { // when the box is not checked (which means "No") the count is actually 4
+		$target = '';
+	}
+
 
 	$rss = fetch_feed( $feedurl );
 	
 	if ( ! is_wp_error( $rss ) ) { // Checks that the object is created correctly
 		
-		// Figure out how many total items there are, but limit it to 3.
+		// Figure out how many total items there are.
 		$maxitems = $rss->get_item_quantity( $select );
 		
 		// Build an array of all the items, starting with element 0 (first element).
@@ -36,10 +50,13 @@ function dbfw_widget_function() {
 			<ul>
 				<?php
 				// Loop through each feed item and display each item as a hyperlink.
-				foreach ( $rss_items as $item ) { ?>
+				foreach ( $rss_items as $item ) { 
+				?>
 				    
 					<li>
-						<a class="rsswidget" href="<?php echo $item->get_permalink(); ?>"><?php echo $item->get_title(); ?></a>
+						<a class="rsswidget" href="<?php echo esc_url( $item->get_permalink() ); ?>" target="<?php echo $target;?>">
+							
+							<?php echo esc_attr( $item->get_title() ); ?></a>
 						
 						<span class="rss-date"><?php echo date_i18n('F j, Y', $item->get_date('U')); ?></span>
 					</li>

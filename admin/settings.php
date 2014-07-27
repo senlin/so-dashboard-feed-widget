@@ -52,6 +52,20 @@ function dbfw_render_form() { ?>
 					
 					<tr valign="top">
 						<th scope="row">
+							<label for="dbfw-newtab"><?php _e( 'Open the links in a new tab?', 'dashboard-feed-widget' ); ?></label>
+						</th>
+						
+						<td>
+							<input name="dbfw_options[newtab]" type="checkbox" id="dbfw-newtab" value="1" <?php if ( isset($options['newtab'] ) ) { checked( '1', $options['newtab'] ); } ?> />
+							
+							
+								<?php _e( 'Yes', 'dashboard-feed-widget' ); ?>
+							<p class="description"><?php _e( 'Check this box to have the links open in a new tab', 'dashboard-feed-widget' ); ?></p>
+						</td>
+					</tr>
+
+					<tr valign="top">
+						<th scope="row">
 							<label for="dbfw-select"><?php _e( 'How many Feed Items to show in the SO Dashboard Feed Widget', 'dashboard-feed-widget' ); ?></label>
 						</th>
 						
@@ -146,8 +160,9 @@ function dbfw_render_form() { ?>
 				</div> <!-- end .top -->
 				
 				<ul>
-					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e('Senlin Online', 'dashboard-feed-widget'); ?></a></li>
-					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e('WP Tips', 'dashboard-feed-widget'); ?></a></li>
+					<li><a href="https://senlinonline.com/plus/" target="_blank" title="SO PLUS, Premium WordPress Plugins by Senlin Online"><?php _e( 'SO PLUS', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e( 'Senlin Online', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="https://plus.google.com/+PietBos" target="_blank" title="Piet on Google+"><?php _e( 'Google+', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
 					<li><a href="http://twitter.com/piethfbos" target="_blank" title="Twitter"><?php _e( 'Twitter: @piethfbos', 'dashboard-feed-widget' ); ?></a></li>
