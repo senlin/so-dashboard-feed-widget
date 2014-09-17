@@ -52,7 +52,7 @@ if ( ! empty ( $GLOBALS['pagenow'] ) && 'plugins.php' === $GLOBALS['pagenow'] )
 
 function dbfw_min_wp_version() {
 	global $wp_version;
-	$require_wp = '3.7';
+	$require_wp = '3.8';
 	$update_url = get_admin_url( null, 'update-core.php' );
 
 	$errors = array();
