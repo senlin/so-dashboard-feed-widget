@@ -2,9 +2,9 @@
 Contributors: senlin
 Donate link: http://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
-Requires at least: 3.8
-Tested up to: 4.0-beta-2
-Stable tag: 2014.07.27
+Requires at least: 4.0
+Tested up to: 4.2
+Stable tag: 2015.04.09
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -69,6 +69,11 @@ Please open an issue over at [Github](https://github.com/senlin/so-dashboard-fee
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2015.04.09 =
+
+* changed logos
+* new banner image for WP.org Repo by [Fré Sonneveld](https://unsplash.com/fresonneveld)
 
 = 2014.07.27 =
 

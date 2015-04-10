@@ -1,9 +1,9 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Last updated 2014.07.27
-###### requires at least WordPress 3.8
-###### tested up to WordPress 4.0-beta-2
+###### Last updated 2015.04.09
+###### requires at least WordPress 4.0
+###### tested up to WordPress 4.2
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/?p=15)
@@ -56,13 +56,16 @@ This repo is open to _any_ kind of contributions.
 
 [Github](https://github.com/senlin) 
 
-[Google+](http://plus.google.com/+PietBos) 
-
 [WordPress](http://profiles.wordpress.org/senlin/) 
 
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 2015.04.09
+
+* changed logos
+* new banner image for WP.org Repo by [Fré Sonneveld](https://unsplash.com/fresonneveld)
 
 ### 2014.07.27
 
