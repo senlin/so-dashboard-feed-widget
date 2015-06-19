@@ -1,9 +1,9 @@
 SO Dashboard Feed Widget
 =====================
 
-###### Last updated 2015.04.09
+###### Last updated 2015.06.20
 ###### requires at least WordPress 4.0
-###### tested up to WordPress 4.2
+###### tested up to WordPress 4.3-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/?p=15)
@@ -19,6 +19,7 @@ The default settings are:
 * the standard title of the widget box is "Recent Updates"
 * as I needed a default feed URL I used the feed of WP TIPS, one of my own websites
 * the default number of RSS items is 3
+* do not open link in new tab (since v2.3.0)
 * yellow background color of the widget (`#FFFF99`)
 
 The plugin comes localized for use on sites other than the English language and/or on bi/multilingual websites. In the languages folder you will find the .po and .mo files. Feel free to send me translations in other languages, I will then add them to this folder and of course I will credit you here.
@@ -62,40 +63,51 @@ This repo is open to _any_ kind of contributions.
 
 ## Changelog
 
-### 2015.04.09
+= 2.4.0
 
+* date: 2015.06.19
+* revert to [semantic versioning](http://semver.org/)
+
+### 2.3.1
+
+* date: 2015.04.09
 * changed logos
 * new banner image for WP.org Repo by [Fré Sonneveld](https://unsplash.com/fresonneveld)
 
-### 2014.07.27
+### 2.3.0
 
+* date: 2014.07.27
 * [feature request](https://github.com/senlin/so-dashboard-feed-widget/issues/6) add option to open the links of the dashboard feed in a new tab
 * bump minimum required WP version up to 3.8
 
-### 2014.04.17
+### 2.2.1
 
+* date: 2014.04.17
 * compatible up to WP 3.9
 * move minimum WP version upwards to 3.7
 
-### 2014.02.10
+### 2.2.0
 
+* date: 2014.02.10
 * modified settings page and styling to better fit WP 3.8
 * i18n date output
 * removed line break between title and date
 * updated settings icon
 * updated screenshots
 
-### 2013.12.28
+### 2.1.1
 
+* date: 2013.12.28
 * fixed [bug](https://github.com/senlin/so-dashboard-feed-widget/issues/2)
 
-### 2013.12.26
+### 2.1.0
 
+* date: 2013.12.26
 * tested up to WP 3.9-alpha
-* new links pointing to [SO-WP.com](http://so-wp.com)
+* new links pointing to [SO-WP.com](http://so-wp.com/)
 * new version number format
 * removed dashboard link hover color
-* added option to change yellow background color of widget [#1](https://github.com/senlin/so-dashboard-feed-widget/issues/1)
+* added option to change yellow background color of widget
 * moved RTL-style to new `dbfw_style_function`
 * update language files
 
