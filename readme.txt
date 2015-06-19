@@ -5,6 +5,10 @@ Tags: dashboard, feed, widget, admin, rss
 Requires at least: 4.0
 Tested up to: 4.2
 Stable tag: 2015.04.09
+=======
+Requires at least: 3.8
+Tested up to: 4.1
+Stable tag: 2014.07.27
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.

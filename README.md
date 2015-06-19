@@ -1,9 +1,15 @@
 SO Dashboard Feed Widget
 =====================
 
+<<<<<<< HEAD
 ###### Last updated 2015.06.20
 ###### requires at least WordPress 4.0
 ###### tested up to WordPress 4.3-alpha
+=======
+###### Last updated 2014.07.27
+###### requires at least WordPress 3.8
+###### tested up to WordPress 4.1
+>>>>>>> origin/master
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/?p=15)
