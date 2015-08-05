@@ -9,7 +9,7 @@ function dbfw_render_form() { ?>
 	<div class="wrap">
 		
 		<!-- Display Plugin Header, and Description -->
-		<h2><?php _e( 'SO Dashboard Feed Widget Settings', 'dashboard-feed-widget' ); ?></h2>
+		<h1><?php _e( 'SO Dashboard Feed Widget Settings', 'dashboard-feed-widget' ); ?></h1>
 		
 		<p><?php _e( 'Below you can adjust the output of the SO Dashboard Feed Widget. You can change the title of the widget, the feed URL, the amount of feed items to show and the background color of the widget.', 'dashboard-feed-widget' ); ?></p>
 			
