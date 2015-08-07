@@ -1,11 +1,11 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: SO Dashboard Feed Widget\n"
-"POT-Creation-Date: 2015-08-07 10:39+0800\n"
-"PO-Revision-Date: 2015-08-07 10:39+0800\n"
+"POT-Creation-Date: 2015-08-07 10:34+0800\n"
+"PO-Revision-Date: 2015-08-07 10:32+0800\n"
 "Last-Translator: Piet Bos <piet@so-wp.com>\n"
 "Language-Team: Piet Bos <piet@so-wp.com>\n"
-"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,13 +16,12 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: admin/settings.php:12
 msgid "SO Dashboard Feed Widget Settings"
-msgstr "SO Dashboard Feed Widget Instellingen"
+msgstr ""
 
 #: admin/settings.php:14
 msgid ""
@@ -30,80 +29,71 @@ msgid ""
 "change the title of the widget, the feed URL, the amount of feed items to "
 "show and the background color of the widget."
 msgstr ""
-"Hieronder kan je de output van de SO Dashboard Feed Widget aanpassen. Je kan "
-"de titel van de widget veranderen, de URL van de feed, het aantal feed items "
-"en de achtergrondkleur van de widget."
 
 #: admin/settings.php:29
 msgid "Widget Title"
-msgstr "Widget titel"
+msgstr ""
 
 #: admin/settings.php:34
 msgid ""
 "Change the title of the SO Dashboard Feed Widget into something of your "
 "liking"
 msgstr ""
-"Verander de title van de SO Dashboard Feed Widget naar iets dat je leuk vindt"
 
 #: admin/settings.php:42
 msgid "Feed URL"
-msgstr "URL van de Feed"
+msgstr ""
 
 #: admin/settings.php:47
 msgid "Change the feed-URL to a site of your choice"
-msgstr "Verander de URL van de feed naar een site van jouw keuze"
+msgstr ""
 
 #: admin/settings.php:55
 msgid "Open the links in a new tab?"
-msgstr "Open link in een nieuw venster"
+msgstr ""
 
 #: admin/settings.php:62
 msgid "Yes"
-msgstr "Ja"
+msgstr ""
 
 #: admin/settings.php:63
 msgid "Check this box to have the links open in a new tab"
 msgstr ""
-"Schakel dit selectievakje in als u wilt dat de links openen in een nieuwe tab"
 
 #: admin/settings.php:69
 msgid "How many Feed Items to show in the SO Dashboard Feed Widget"
-msgstr "Hoeveel feed items wil je laten zien in de SO Dashboard Feed Widget"
+msgstr ""
 
 #: admin/settings.php:85
 msgid "How many feed items to show in the widget?"
-msgstr "Hoeveel feed items laten zien in de widget?"
+msgstr ""
 
 #: admin/settings.php:93
 msgid "Widget Background Color"
-msgstr "Achtergrondkleur Widget"
+msgstr ""
 
 #: admin/settings.php:98
 msgid ""
 "Change the background color of the widget (3 or 6 digit HEX code without the "
 "#)"
 msgstr ""
-"Verander de achtergrondkleur van de widget (3 of 6 cijferige HEX code zonder "
-"#)"
 
 #: admin/settings.php:106
 msgid "Database Options"
-msgstr "Database Opties"
+msgstr ""
 
 #: admin/settings.php:111
 msgid "Restore defaults upon plugin deactivation/reactivation"
 msgstr ""
-"Standaard instellingen herstellen na plugin deactivering/heractivering "
 
 #: admin/settings.php:112
 msgid ""
 "Only check this if you want to reset plugin settings upon Plugin reactivation"
 msgstr ""
-"Check dit alleen als je de plugin instellingen wilt resetten na heractivering"
 
 #: admin/settings.php:120
 msgid "Save Settings"
-msgstr "Instellingen opslaan"
+msgstr ""
 
 #: admin/settings.php:131
 #, php-format
@@ -112,9 +102,6 @@ msgid ""
 "rating in the <a href=\"%s\" title=\"Rate this plugin!\">WordPress Plugin "
 "Repository</a>."
 msgstr ""
-"Wanneer je deze plugin handig vindt, geef het dan een gunstige waardering in "
-"de <a href=“%s” title=“Geef deze plugin een waardering!”>WordPress Plugin "
-"Repository</a>."
 
 #: admin/settings.php:140
 #, php-format
@@ -123,14 +110,10 @@ msgid ""
 "please note that I give <a href=\"%s\" title=\"Support or Feature Requests "
 "via Github\">support via Github</a> only."
 msgstr ""
-"Wanneer je een probleem hebt met deze plugin of een feature request wilt "
-"doen, houd er dan rekening mee dat ik de plugin alleen <a href=“%s” "
-"title=“Ondersteuning en/of Feature Requests alleen via Github”>ondersteun "
-"via Github</a>."
 
 #: admin/settings.php:149
 msgid "About the Author"
-msgstr "Over de auteur"
+msgstr ""
 
 #: admin/settings.php:156
 #, php-format
@@ -139,34 +122,30 @@ msgid ""
 "of my other plugins on <a href=\"%s\" title=\"SO WP Plugins\">SO WP Plugins</"
 "a>. You can find out more information about me via the following links:"
 msgstr ""
-"Hoi, mijn naam is Piet Bos, hopelijk vind je dit een handige plugin! Kijk "
-"ook eens naar mijn andere plugins via <a href=“%s” title=“SO WP Plugins”>SO "
-"WP Plugins</a>. Je kan meer informatie over mij vinden via de onderstaande "
-"links:"
 
 #: admin/settings.php:163
 msgid "SO PLUS"
-msgstr "SO PLUS"
+msgstr ""
 
 #: admin/settings.php:164
 msgid "Senlin Online"
-msgstr "Senlin Online"
+msgstr ""
 
 #: admin/settings.php:165
 msgid "WP Tips"
-msgstr "WP Tips"
+msgstr ""
 
 #: admin/settings.php:166
 msgid "LinkedIn"
-msgstr "LinkedIn"
+msgstr ""
 
 #: admin/settings.php:167
 msgid "Github"
-msgstr "Github"
+msgstr ""
 
 #: admin/settings.php:168
 msgid "WordPress.org Profile"
-msgstr "WordPress.org profiel"
+msgstr ""
 
 #: dashboard-feed-widget.php:80
 #, php-format
@@ -174,36 +153,33 @@ msgid ""
 "<div class=\"error\"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></"
 "div>"
 msgstr ""
-"<div class=“error”><p>%1$s</p><p><i>%2$s</i> is gedeactiveerd.</p></div>"
 
 #: dashboard-feed-widget.php:224
 msgid "Recent Updates"
-msgstr "Recente Updates"
+msgstr ""
 
 #: dashboard-feed-widget.php:297
 msgid "Settings"
-msgstr "Instellingen"
+msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "SO Dashboard Feed Widget"
-msgstr "SO Dashboard Feed Widget"
+msgstr ""
 
 #. Plugin URI of the plugin/theme
 msgid "http://so-wp.com/?p=15"
-msgstr "http://so-wp.com/?p=15"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
 "The SO Dashboard Feed Widget shows the latest Posts from a site of your "
 "choice in the top of the WordPress Dashboard."
 msgstr ""
-"De SO Dashboard Feed Widget toont de laatste berichten van een site van uw "
-"keuze in de top van het  WordPress Dashboard."
 
 #. Author of the plugin/theme
 msgid "Piet Bos"
-msgstr "Piet Bos"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://senlinonline.com"
-msgstr "http://senlinonline.com"
+msgstr ""

@@ -3,7 +3,7 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://so-wp.com/?p=15
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2015.08.05
+Version: 2015.08.07
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -135,7 +135,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2015.08.05' );
+		define( 'SO_DBFW_VERSION', '2015.08.07' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );

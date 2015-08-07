@@ -3,7 +3,7 @@ SO Dashboard Feed Widget
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
-###### Last updated 2015.08.05
+###### Last updated 2015.08.07
 ###### requires at least WordPress 4.0
 ###### tested up to WordPress 4.3
 ###### Author: [Piet Bos](https://github.com/senlin)
@@ -64,6 +64,11 @@ This repo is open to _any_ kind of contributions.
 [Website](http://senlinonline.com)
 
 ## Changelog
+
+### 2.4.2 (WP version 2015.08.07)
+
+* tweak header settings page
+* adjust language strings
 
 ### 2.4.1 (WP version 2015.08.05)
 
