@@ -3,7 +3,7 @@ Contributors: senlin
 Donate link: http://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 4.0
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: 2015.08.07
 License: GPLv2 or later
 
