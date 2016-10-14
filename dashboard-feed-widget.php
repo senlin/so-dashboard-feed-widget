@@ -3,7 +3,7 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: http://so-wp.com/?p=15
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2015.08.07
+Version: 2016.5.14
 Author: Piet Bos
 Author URI: http://senlinonline.com
 License: GPLv2 or later
@@ -52,7 +52,7 @@ if ( ! empty ( $GLOBALS['pagenow'] ) && 'plugins.php' === $GLOBALS['pagenow'] )
 
 function dbfw_min_wp_version() {
 	global $wp_version;
-	$require_wp = '4.0';
+	$require_wp = '4.3';
 	$update_url = get_admin_url( null, 'update-core.php' );
 
 	$errors = array();
@@ -135,7 +135,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2015.08.07' );
+		define( 'SO_DBFW_VERSION', '2016.5.14' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -222,7 +222,7 @@ function dbfw_add_defaults() {
 	
 		$defaults = array(
 			'widget_title' => __( 'Recent Updates', 'dashboard-feed-widget' ),
-			'feed_url' => 'http://wpti.ps/feed/',
+			'feed_url' => 'https://wpti.ps/feed/',
 			'newtab' => '',
 			'drp_select_box' => '3',
 			'widget_bkgr' => 'FF9',

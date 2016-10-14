@@ -3,9 +3,9 @@ SO Dashboard Feed Widget
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
-###### Last updated 2015.08.07
-###### requires at least WordPress 4.0
-###### tested up to WordPress 4.4
+###### Last updated 2016.5.14
+###### requires at least WordPress 4.3
+###### tested up to WordPress 4.5.2
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](http://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](http://so-wp.com/?p=15)
@@ -36,7 +36,7 @@ I have decided to only support this plugin through [Github](https://github.com/s
 
 ### Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite?
 
-For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](https://github.com/senlin/so-multisite-dashboard-feed-widget) that I developed a while back and which is also compatible with the latest version of WordPress.
+No it doesn't work properly. There are other plugins that can do this more reliable for Multisite.
 
 ### I have an issue with this plugin, where can I get support?
 
@@ -53,7 +53,7 @@ This repo is open to _any_ kind of contributions.
 
 ## Donations
 
-* Donate link: http://so-wp.com/donations/
+* Donate link: https://so-wp.com/donations/
 
 ## Connect with me through
 
@@ -61,16 +61,22 @@ This repo is open to _any_ kind of contributions.
 
 [WordPress](http://profiles.wordpress.org/senlin/) 
 
-[Website](http://senlinonline.com)
+[Website](https://senlinonline.com)
 
 ## Changelog
 
-### 2.4.2 (WP version 2015.08.07)
+### 2.4.3 (version in the WP Plugins Directory 2016.5.14)
+
+* remove FAQ answer that points to Multisite version as that plugin is no longer in active development
+* adjust tested up to version as well as minimum required version
+* adjust links to reflect switch to SSL
+
+### 2.4.2 (version in the WP Plugins Directory 2015.08.07)
 
 * tweak header settings page
 * adjust language strings
 
-### 2.4.1 (WP version 2015.08.05)
+### 2.4.1 (version in the WP Plugins Directory 2015.08.05)
 
 * date: 2015.08.05
 * changed header settings page to h1 (https://make.wordpress.org/plugins/2015/08/03/4-3-change-to-plugin-dashboard-pages/)

@@ -129,7 +129,7 @@ function dbfw_render_form() { ?>
 			<?php
 			/* Translators: 1 is link to WP Repo */
 			printf( __( 'If you have found this plugin at all useful, please give it a favourable rating in the <a href="%s" title="Rate this plugin!">WordPress Plugin Repository</a>.', 'dashboard-feed-widget' ), 
-				esc_url( 'http://wordpress.org/support/view/plugin-reviews/dashboard-feed-widget' )
+				esc_url( 'https://wordpress.org/support/view/plugin-reviews/dashboard-feed-widget' )
 			);
 			?>
 		</p>
@@ -154,18 +154,17 @@ function dbfw_render_form() { ?>
 					<img class="author-image" src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" />
 					<p>
 						<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
-							esc_url( 'http://so-wp.com' )
+							esc_url( 'https://so-wp.com' )
 						); ?>
 					</p>
 				</div> <!-- end .top -->
 				
 				<ul>
-					<li><a href="https://senlinonline.com/plus/" target="_blank" title="SO PLUS, Premium WordPress Plugins by Senlin Online"><?php _e( 'SO PLUS', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e( 'Senlin Online', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://wpti.ps/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://cn.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="http://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e( 'Senlin Online', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://wpti.ps/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://www.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
+					<li><a href="https://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
 				</ul>
 			
 			</div> <!-- end .inside -->

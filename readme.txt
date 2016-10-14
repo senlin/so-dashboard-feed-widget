@@ -1,10 +1,10 @@
 === SO Dashboard Feed Widget ===
 Contributors: senlin
-Donate link: http://so-wp.com/donations/
+Donate link: https://so-wp.com/donations/
 Tags: dashboard, feed, widget, admin, rss
-Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 2015.08.07
+Requires at least: 4.3
+Tested up to: 4.6.1
+Stable tag: 2016.5.14
 License: GPLv2 or later
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
@@ -35,7 +35,7 @@ Thanks for your understanding and cooperation.
 
 == Installation ==
 
-= Wordpress =
+= WordPress =
 
 Search for "SO Dashboard Feed Widget" and install with the **Plugins > Add New** back-end page.
 
@@ -57,7 +57,7 @@ After saving the settings, you can see the results in the main WordPress Dashboa
 
 = Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite? =
 
-For now it doesn't for reasons I do not know yet, but I'm looking into. If you want to use something similar for WordPress Multisite, you can download the [SO Multisite Dashboard Feed Widget](http://wordpress.org/plugins/multisite-dashboard-feed-widget/) that I developed a while back and which is also compatible with the latest version of WordPress.
+No it doesn't work properly. There are other plugins that can do this more reliable for Multisite.
 
 = I have an issue with this plugin, where can I get support? =
 
@@ -69,6 +69,12 @@ Please open an issue over at [Github](https://github.com/senlin/so-dashboard-fee
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2016.5.14 =
+
+* remove FAQ answer that points to Multisite version as that plugin is no longer in active development
+* adjust tested up to version as well as minimum required version
+* adjust links to reflect switch to SSL
 
 = 2015.08.07 =
 
