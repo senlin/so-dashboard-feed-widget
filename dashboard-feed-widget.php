@@ -1,18 +1,18 @@
 <?php
 /*
 Plugin Name: SO Dashboard Feed Widget
-Plugin URI: http://so-wp.com/?p=15
+Plugin URI: https://so-wp.com/?p=15
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2016.5.14
+Version: 2016.11.29
 Author: Piet Bos
-Author URI: http://senlinonline.com
+Author URI: https://so-wp.com/plugins/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: dashboard-feed-widget
 Domain Path: /languages
 */
 
-/*  Copyright 2013-2015  Piet Bos  (email : piet@so-wp.com)
+/*  Copyright 2013-2016  Piet Bos  (email : piet@so-wp.com)
 
 Credits: Option Page made possible thanks to the Plugin Options Starter Kit by David Gwyer (http://www.presscoders.com/plugins/plugin-options-starter-kit/)
 
@@ -37,52 +37,6 @@ GNU General Public License for more details.
  * Prevent direct access to files
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-/**
- * Version check; any WP version under 3.6 is not supported (if only to "force" users to stay up to date)
- * 
- * adapted from example by Thomas Scholz (@toscho) http://wordpress.stackexchange.com/a/95183/2015, Version: 2013.03.31, Licence: MIT (http://opensource.org/licenses/MIT)
- *
- * @since 1.0.5
- */
-
-//Only do this when on the Plugins page.
-if ( ! empty ( $GLOBALS['pagenow'] ) && 'plugins.php' === $GLOBALS['pagenow'] )
-	add_action( 'admin_notices', 'dbfw_check_admin_notices', 0 );
-
-function dbfw_min_wp_version() {
-	global $wp_version;
-	$require_wp = '4.3';
-	$update_url = get_admin_url( null, 'update-core.php' );
-
-	$errors = array();
-
-	if ( version_compare( $wp_version, $require_wp, '<' ) ) 
-
-		$errors[] = "You have WordPress version $wp_version installed, but <b>this plugin requires at least WordPress $require_wp</b>. Please <a href='$update_url'>update your WordPress version</a>.";
-
-	return $errors;
-}
-
-function dbfw_check_admin_notices()
-{
-	$errors = dbfw_min_wp_version();
-
-	if ( empty ( $errors ) )
-		return;
-
-	// Suppress "Plugin activated" notice.
-	unset( $_GET['activate'] );
-
-	// this plugin's name
-	$name = get_file_data( __FILE__, array ( 'Plugin Name' ), 'plugin' );
-
-	printf( __( '<div class="error"><p>%1$s</p><p><i>%2$s</i> has been deactivated.</p></div>', 'dashboard-feed-widget' ),
-		join( '</p><p>', $errors ),
-		$name[0]
-	);
-	deactivate_plugins( plugin_basename( __FILE__ ) );
-}
 
 /**
  * Rewrite of the plugin
@@ -135,7 +89,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2016.5.14' );
+		define( 'SO_DBFW_VERSION', '2016.11.29' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );

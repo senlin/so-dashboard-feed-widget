@@ -151,20 +151,21 @@ function dbfw_render_form() { ?>
 			
 			<div class="inside">
 				<div class="top">
-					<img class="author-image" src="http://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" />
+					<img class="author-image" src="https://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" />
 					<p>
 						<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
-							esc_url( 'https://so-wp.com' )
+							esc_url( 'https://so-wp.com/plugins/' )
 						); ?>
 					</p>
 				</div> <!-- end .top -->
 				
 				<ul>
-					<li><a href="https://senlinonline.com/" target="_blank" title="Senlin Online"><?php _e( 'Senlin Online', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="https://wpti.ps/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="https://www.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="https://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
-					<li><a href="https://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://bohanintl.com/" target="_blank" title="BHI Consulting"><?php _e( 'BHI Consulting', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://www.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://so-wp.com/" target="_blank" title="SO WP"><?php _e( 'SO WP', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://wpti.ps/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://profiles.wordpress.org/senlin/" title="on WordPress.org"><?php _e( 'WordPress.org Profile', 'dashboard-feed-widget' ); ?></a></li>
 				</ul>
 			
 			</div> <!-- end .inside -->
