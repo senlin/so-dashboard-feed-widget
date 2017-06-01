@@ -3,8 +3,8 @@ SO Dashboard Feed Widget
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
-###### Last updated 2016.11.29
-###### tested up to WordPress 4.7
+###### Last updated 2017.6.1
+###### tested up to WordPress 4.8
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](https://so-wp.com/?p=15)
@@ -18,16 +18,10 @@ On websites I develop for clients I always add this widget to their WordPress Da
 The default settings are:
 
 * the standard title of the widget box is "Recent Updates"
-* as I needed a default feed URL I used the feed of WP TIPS, one of my own websites
+* as I needed a default feed URL I used the feed of SO WP, one of my own websites
 * the default number of RSS items is 3
 * do not open link in new tab (since v2.3.0)
 * yellow background color of the widget (`#FFFF99`)
-
-The plugin comes localized for use on sites other than the English language and/or on bi/multilingual websites. In the languages folder you will find the .po and .mo files. Feel free to send me translations in other languages, I will then add them to this folder and of course I will credit you here.
-
-Current translations:
-
-* Dutch (by myself)
 
 I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
@@ -56,9 +50,9 @@ This repo is open to _any_ kind of contributions.
 
 ## Connect with me through
 
-[Website](https://bohanintl.com)
+[BHI Consulting for Websites](https://bohanintl.com)
 
-[Website](https://so-wp.com)
+[SO WP](https://so-wp.com)
 
 [Github](https://github.com/senlin) 
 
@@ -68,7 +62,14 @@ This repo is open to _any_ kind of contributions.
 
 ## Changelog
 
-### 2.4.3 (version in the WP Plugins Directory 2016.11.29)
+### 2.4.5 (version in the WP Plugins Directory 2017.6.1)
+
+* empty redundant language folder
+* change default feed
+* verified compatibility WP 4.8
+
+
+### 2.4.4 (version in the WP Plugins Directory 2016.11.29)
 
 * remove version check
 * tested up to WP 4.7

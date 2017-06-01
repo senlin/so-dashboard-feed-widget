@@ -3,8 +3,8 @@
 Plugin Name: SO Dashboard Feed Widget
 Plugin URI: https://so-wp.com/?p=15
 Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2016.11.29
-Author: Piet Bos
+Version: 2017.6.1
+Author: SO WP
 Author URI: https://so-wp.com/plugins/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Text Domain: dashboard-feed-widget
 Domain Path: /languages
 */
 
-/*  Copyright 2013-2016  Piet Bos  (email : piet@so-wp.com)
+/*  Copyright 2013-2017  Piet Bos  (email: piet@so-wp.com)
 
 Credits: Option Page made possible thanks to the Plugin Options Starter Kit by David Gwyer (http://www.presscoders.com/plugins/plugin-options-starter-kit/)
 
@@ -89,7 +89,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2016.11.29' );
+		define( 'SO_DBFW_VERSION', '2017.6.1' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -176,7 +176,7 @@ function dbfw_add_defaults() {
 	
 		$defaults = array(
 			'widget_title' => __( 'Recent Updates', 'dashboard-feed-widget' ),
-			'feed_url' => 'https://wpti.ps/feed/',
+			'feed_url' => 'https://so-wp/feed/',
 			'newtab' => '',
 			'drp_select_box' => '3',
 			'widget_bkgr' => 'FF9',
