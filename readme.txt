@@ -1,37 +1,33 @@
-=== SO Dashboard Feed Widget ===
+=== Dashboard Feed Widget ===
 Contributors: senlin
-Donate link: https://so-wp.com/plugins/donations/
+Donate link: https://so-wp.com/donations
 Tags: dashboard, feed, widget, admin, rss
 Requires at least: 4.3
 Tested up to: 4.8
-Stable tag: 2017.6.1
+Stable tag: 2017.927
 License: GPLv2 or later
 
-The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
 == Description ==
 
-On websites I develop for clients I always add this widget to their WordPress Dashboard to keep them informed on general updates regarding their websites. I thought it would be a handy tool for other developers, so I turned my widget into a plugin.
+On websites we develop for clients we always add this widget to their WordPress Dashboard to keep them informed on general updates regarding their websites. We thought it would be a handy tool for other developers, so we turned the widget into a plugin.
 
 The default settings are:
 
 * the standard title of the widget box is "Recent Updates"
-* as I needed a default feed URL I used the feed of SO WP, one of our own websites
+* as we needed a default feed URL we use the feed of WP TIPS, one of our own websites
 * the default number of RSS items is 3
 * do not open link in new tab (since 2014.07.27)
 * yellow background color of the widget (`#FFFF99`)
 
-I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue over at Github. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
- 
-<strong>PLEASE DO NOT POST YOUR ISSUES VIA THE WORDPRESS FORUMS BUT ON GITHUB INSTEAD</strong>
- 
-Thanks for your understanding and cooperation.
+We have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue over at Github. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
 
 == Installation ==
 
 = WordPress =
 
-Search for "SO Dashboard Feed Widget" and install with the **Plugins > Add New** back-end page.
+Search for "Dashboard Feed Widget" and install with the **Plugins > Add New** back-end page.
 
  &hellip; OR &hellip;
 
@@ -49,7 +45,7 @@ After saving the settings, you can see the results in the main WordPress Dashboa
 
 == Frequently Asked Questions ==
 
-= Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite? =
+= Does the Dashboard Feed Widget plugin also work on WordPress Multisite? =
 
 No it doesn't work properly. There are other plugins that can do this more reliable for Multisite.
 
@@ -63,6 +59,12 @@ Please open an issue over at [Github](https://github.com/senlin/so-dashboard-fee
 2. Siteadmin Dashboard after installation
 
 == Changelog ==
+
+= 2017.927 =
+
+* date: Sep 27, 2017
+* adjust some links due to overhaul of SO WP website
+* banner image: add retina
 
 = 2017.6.1 =
 

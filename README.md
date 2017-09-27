@@ -3,17 +3,17 @@ SO Dashboard Feed Widget
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
-###### Last updated 2017.6.1
+###### Last updated September 27, 2017
 ###### tested up to WordPress 4.8
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
-###### [Plugin homepage](https://so-wp.com/?p=15)
+###### [Plugin homepage](https://so-wp.com/plugin/dashboard-feed-widget)
 
 The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
 ## Description
 
-On websites I develop for clients I always add this widget to their WordPress Dashboard to keep them informed on general updates regarding their websites. I thought it would be a handy tool for other developers, so I turned my widget into a plugin.
+On websites we develop for clients we always add this widget to their WordPress Dashboard to keep them informed on general updates regarding their websites. We thought it would be a handy tool for other developers, so we turned the widget into a plugin.
 
 The default settings are:
 
@@ -23,11 +23,11 @@ The default settings are:
 * do not open link in new tab (since v2.3.0)
 * yellow background color of the widget (`#FFFF99`)
 
-I have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
+We have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
  
 ## Frequently Asked Questions
 
-### Does the SO Dashboard Feed Widget plugin also work on WordPress Multisite?
+### Does the Dashboard Feed Widget plugin also work on WordPress Multisite?
 
 No it doesn't work properly. There are other plugins that can do this more reliable for Multisite.
 
@@ -46,21 +46,29 @@ This repo is open to _any_ kind of contributions.
 
 ## Donations
 
-* Donate link: https://so-wp.com/plugins/donations
+* Donate link: https://so-wp.com/donations
 
-## Connect with me through
+## Connect with us through
 
 [BHI Consulting for Websites](https://bohanintl.com)
 
 [SO WP](https://so-wp.com)
 
+[WP TIPS](https://bohanintl.com/wptips/)
+
 [Github](https://github.com/senlin) 
 
 [LinkedIn](https://www.linkedin.com/in/pietbos) 
 
-[WordPress](https://profiles.wordpress.org/senlin/) 
+[WordPress](https://profiles.wordpress.org/senlin/)
 
 ## Changelog
+
+# 2.4.6 (version in the WP Plugins Directory 2017.927)
+
+* date: Sep 27, 2017
+* adjust some links due to overhaul of SO WP website
+* banner image: add retina
 
 ### 2.4.5 (version in the WP Plugins Directory 2017.6.1)
 

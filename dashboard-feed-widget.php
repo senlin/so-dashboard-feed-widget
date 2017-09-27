@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: SO Dashboard Feed Widget
-Plugin URI: https://so-wp.com/?p=15
-Description: The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2017.6.1
+Plugin Name: Dashboard Feed Widget
+Plugin URI: https://so-wp.com/plugin/dashboard-feed-widget
+Description: The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+Version: 2017.927
 Author: SO WP
-Author URI: https://so-wp.com/plugins/
+Author URI: https://so-wp.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: dashboard-feed-widget
@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 2.0.0
  */
 class DBFW_Load {
-	
+
 	function __construct() {
 
 		global $so_dbfw;
@@ -53,31 +53,31 @@ class DBFW_Load {
 		$so_dbfw = new stdClass;
 
 		/* Set the init. */
-		add_action( 'admin_init', array( &$this, 'init' ), 1 );
+		add_action( 'admin_init', array( $this, 'init' ), 1 );
 
 		/* Set the constants needed by the plugin. */
-		add_action( 'plugins_loaded', array( &$this, 'constants' ), 2 );
+		add_action( 'plugins_loaded', array( $this, 'constants' ), 2 );
 
 		/* Internationalize the text strings used. */
-		add_action( 'plugins_loaded', array( &$this, 'i18n' ), 3 );
+		add_action( 'plugins_loaded', array( $this, 'i18n' ), 3 );
 
 		/* Load the functions files. */
-		add_action( 'plugins_loaded', array( &$this, 'includes' ), 4 );
+		add_action( 'plugins_loaded', array( $this, 'includes' ), 4 );
 
 		/* Load the admin files. */
-		add_action( 'plugins_loaded', array( &$this, 'admin' ), 5 );
+		add_action( 'plugins_loaded', array( $this, 'admin' ), 5 );
 
 	}
-	
+
 	/**
 	 * Init plugin options to white list our options
 	 *
 	 * @since 2.0.0
 	 */
 	function init() {
-		
+
 		register_setting( 'dbfw_plugin_options', 'dbfw_options', 'dbfw_validate_options' );
-		
+
 	}
 
 
@@ -89,7 +89,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2017.6.1' );
+		define( 'SO_DBFW_VERSION', '2017.927' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -151,14 +151,14 @@ $so_dbfw_load = new DBFW_Load();
  * Register activation/deactivation hooks
  * @since 0.1
  */
-register_activation_hook( __FILE__, 'dbfw_add_defaults' ); 
+register_activation_hook( __FILE__, 'dbfw_add_defaults' );
 register_uninstall_hook( __FILE__, 'dbfw_delete_plugin_options' );
 
 add_action( 'admin_menu', 'dbfw_add_options_page' );
 
 function dbfw_add_options_page() {
 	// Add the new admin menu and page and save the returned hook suffix
-	$hook = add_options_page( 'SO Dashboard Feed Widget Settings', 'SO Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
+	$hook = add_options_page( 'Dashboard Feed Widget Settings', 'Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
 	// Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded
 	add_action( 'admin_print_styles-' . $hook , 'dbfw_load_settings_style' );
 }
@@ -169,33 +169,33 @@ function dbfw_add_options_page() {
  * @since 0.1
  */
 function dbfw_add_defaults() {
-	
+
 	$tmp = get_option( 'dbfw_options' );
-	
+
 	if ( ( $tmp['chk_default_options_db'] == '1' ) || ( ! is_array( $tmp ) ) ) {
-	
+
 		$defaults = array(
 			'widget_title' => __( 'Recent Updates', 'dashboard-feed-widget' ),
-			'feed_url' => 'https://so-wp/feed/',
+			'feed_url' => 'https://bohanintl.com/wptips/feed',
 			'newtab' => '',
 			'drp_select_box' => '3',
 			'widget_bkgr' => 'FF9',
 			'chk_default_options_db' => ''
 		);
-		
+
 		update_option( 'dbfw_options', $defaults );
-	
+
 	}
-		
+
 }
 
 
 /**
- * Delete options table entries ONLY when plugin deactivated AND deleted 
+ * Delete options table entries ONLY when plugin deactivated AND deleted
  * @since 0.1
  */
 function dbfw_delete_plugin_options() {
-	
+
 	delete_option( 'dbfw_options' );
 
 }
@@ -233,13 +233,13 @@ function dbfw_validate_options( $input ) {
 	$input['feed_url'] =  wp_filter_nohtml_kses( $input['feed_url'] ); // Sanitize input (strip html tags, and escape characters)
 	$input['widget_bkgr'] =  wp_filter_nohtml_kses( $input['widget_bkgr'] ); // Sanitize input (strip html tags, and escape characters)
 	return $input;
-	
+
 	printf(
 	    '<input id="%1$s" name="dbfw_options[%1$s]" type="checkbox" %2$s />',
 	    'newtab',
 	    checked( isset( $this->options['newtab'] ), true, false )
-	);	
-	
+	);
+
 }
 
 /**
