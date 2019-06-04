@@ -1,15 +1,15 @@
-SO Dashboard Feed Widget
+Dashboard Feed Widget
 =====================
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
 ###### Last updated September 27, 2017
 ###### tested up to WordPress 4.8
-###### Author: [Piet Bos](https://github.com/senlin)
+###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](https://so-wp.com/plugin/dashboard-feed-widget)
 
-The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
 ## Description
 
@@ -58,7 +58,7 @@ This repo is open to _any_ kind of contributions.
 
 [Github](https://github.com/senlin) 
 
-[LinkedIn](https://www.linkedin.com/in/pietbos) 
+[LinkedIn](https://www.linkedin.com/in/pieterbos83) 
 
 [WordPress](https://profiles.wordpress.org/senlin/)
 
