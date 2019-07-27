@@ -1,10 +1,11 @@
 Dashboard Feed Widget
 =====================
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
+[![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget) [![WP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/wp-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![PHP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/php-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![ClassicPress tested on version 1.0.1](https://img.shields.io/badge/ClassicPress-1.0.1-03768e.svg?style=flat-round)](https://www.classicpress.net)
 
 ###### Last updated September 27, 2017
-###### tested up to WordPress 4.8
+###### tested up to WordPress 5.2.2
+###### tested up to ClassicPress 1.0.1
 ###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](https://so-wp.com/plugin/dashboard-feed-widget)
