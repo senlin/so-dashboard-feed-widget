@@ -1,7 +1,7 @@
-SO Dashboard Feed Widget
+Dashboard Feed Widget
 =====================
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
+[![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget) [![WP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/wp-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![PHP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/php-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![ClassicPress tested on version 1.0.1](https://img.shields.io/badge/ClassicPress-1.0.1-03768e.svg?style=flat-round)](https://www.classicpress.net)
 
 ###### Last updated March 14, 2020
 ###### tested up to WordPress 5.4
@@ -9,7 +9,7 @@ SO Dashboard Feed Widget
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](https://so-wp.com/plugin/dashboard-feed-widget)
 
-The SO Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
+The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
 
 ## Description
 
@@ -24,7 +24,7 @@ The default settings are:
 * yellow background color of the widget (`#FFFF99`)
 
 We have decided to only support this plugin through [Github](https://github.com/senlin/so-dashboard-feed-widget/issues). Therefore, if you have any questions, need help and/or want to make a feature request, please open an issue here. You can also browse through open and closed issues to find what you are looking for and perhaps even help others.
- 
+
 ## Frequently Asked Questions
 
 ### Does the Dashboard Feed Widget plugin also work on WordPress Multisite?
@@ -56,9 +56,9 @@ This repo is open to _any_ kind of contributions.
 
 [WP TIPS](https://bohanintl.com/wptips/)
 
-[Github](https://github.com/senlin) 
+[Github](https://github.com/senlin)
 
-[LinkedIn](https://www.linkedin.com/in/pieterbos83) 
+[LinkedIn](https://www.linkedin.com/in/pieterbos83)
 
 [WordPress](https://profiles.wordpress.org/senlin/)
 
@@ -196,4 +196,3 @@ This repo is open to _any_ kind of contributions.
 ### 1.0
 
 * First release
-
