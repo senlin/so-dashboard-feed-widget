@@ -3,8 +3,8 @@ SO Dashboard Feed Widget
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget)
 
-###### Last updated September 27, 2017
-###### tested up to WordPress 4.8
+###### Last updated March 14, 2020
+###### tested up to WordPress 5.4
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Stable Version](https://wordpress.org/plugins/dashboard-feed-widget/) (via WordPress Plugins Repository)
 ###### [Plugin homepage](https://so-wp.com/plugin/dashboard-feed-widget)
@@ -50,7 +50,7 @@ This repo is open to _any_ kind of contributions.
 
 ## Connect with us through
 
-[BHI Consulting for Websites](https://bohanintl.com)
+[BHI Localization for Websites](https://www.bhi-localization.com/)
 
 [SO WP](https://so-wp.com)
 
@@ -58,11 +58,18 @@ This repo is open to _any_ kind of contributions.
 
 [Github](https://github.com/senlin) 
 
-[LinkedIn](https://www.linkedin.com/in/pietbos) 
+[LinkedIn](https://www.linkedin.com/in/pieterbos83) 
 
 [WordPress](https://profiles.wordpress.org/senlin/)
 
 ## Changelog
+
+# 2.4.7 (version in the WP Plugins Directory 2020.314)
+
+* date: Mar 14, 2020
+* adjust compatibility to WP 5.4
+* i18n leftover strings
+* adjust author details to reflect new site
 
 # 2.4.6 (version in the WP Plugins Directory 2017.927)
 

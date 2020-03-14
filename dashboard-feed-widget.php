@@ -3,7 +3,7 @@
 Plugin Name: Dashboard Feed Widget
 Plugin URI: https://so-wp.com/plugin/dashboard-feed-widget
 Description: The Dashboard Feed Widget shows the latest Posts from a site of your choice in the top of the WordPress Dashboard.
-Version: 2017.927
+Version: 2020.314
 Author: SO WP
 Author URI: https://so-wp.com
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Text Domain: dashboard-feed-widget
 Domain Path: /languages
 */
 
-/*  Copyright 2013-2017  Piet Bos  (email: piet@so-wp.com)
+/*  Copyright 2013-2020  Pieter Bos  (email: pieter@so-wp.com)
 
 Credits: Option Page made possible thanks to the Plugin Options Starter Kit by David Gwyer (http://www.presscoders.com/plugins/plugin-options-starter-kit/)
 
@@ -53,19 +53,19 @@ class DBFW_Load {
 		$so_dbfw = new stdClass;
 
 		/* Set the init. */
-		add_action( 'admin_init', array( $this, 'init' ), 1 );
+		add_action( 'admin_init', array( $this, 'init' ) );
 
 		/* Set the constants needed by the plugin. */
-		add_action( 'plugins_loaded', array( $this, 'constants' ), 2 );
+		add_action( 'plugins_loaded', array( $this, 'constants' ) );
 
 		/* Internationalize the text strings used. */
-		add_action( 'plugins_loaded', array( $this, 'i18n' ), 3 );
+		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
 
 		/* Load the functions files. */
-		add_action( 'plugins_loaded', array( $this, 'includes' ), 4 );
+		add_action( 'plugins_loaded', array( $this, 'includes' ) );
 
 		/* Load the admin files. */
-		add_action( 'plugins_loaded', array( $this, 'admin' ), 5 );
+		add_action( 'plugins_loaded', array( $this, 'admin' ) );
 
 	}
 
@@ -89,7 +89,7 @@ class DBFW_Load {
 	function constants() {
 
 		/* Set the version number of the plugin. */
-		define( 'SO_DBFW_VERSION', '2017.927' );
+		define( 'SO_DBFW_VERSION', '2020.314' );
 
 		/* Set constant path to the plugin directory. */
 		define( 'SO_DBFW_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
@@ -158,7 +158,7 @@ add_action( 'admin_menu', 'dbfw_add_options_page' );
 
 function dbfw_add_options_page() {
 	// Add the new admin menu and page and save the returned hook suffix
-	$hook = add_options_page( 'Dashboard Feed Widget Settings', 'Dashboard Feed Widget', 'manage_options', __FILE__, 'dbfw_render_form' );
+	$hook = add_options_page( __( 'Dashboard Feed Widget Settings', 'dashboard-feed-widget' ), __( 'Dashboard Feed Widget', 'dashboard-feed-widget' ), 'manage_options', __FILE__, 'dbfw_render_form' );
 	// Use the hook suffix to compose the hook and register an action executed when plugin's options page is loaded
 	add_action( 'admin_print_styles-' . $hook , 'dbfw_load_settings_style' );
 }
@@ -269,4 +269,3 @@ function dbfw_load_custom_admin_style( $hook ) {
 }
 
 /** The End **/
-?>

@@ -71,16 +71,16 @@ function dbfw_render_form() { ?>
 
 						<td>
 							<select name='dbfw_options[drp_select_box]'>
-								<option value='1' <?php selected( '1', $options['drp_select_box'] ); ?>>1</option>
-								<option value='2' <?php selected( '2', $options['drp_select_box'] ); ?>>2</option>
-								<option value='3' <?php selected( '3', $options['drp_select_box'] ); ?>>3</option>
-								<option value='4' <?php selected( '4', $options['drp_select_box'] ); ?>>4</option>
-								<option value='5' <?php selected( '5', $options['drp_select_box'] ); ?>>5</option>
-								<option value='6' <?php selected( '6', $options['drp_select_box'] ); ?>>6</option>
-								<option value='7' <?php selected( '7', $options['drp_select_box'] ); ?>>7</option>
-								<option value='8' <?php selected( '8', $options['drp_select_box'] ); ?>>8</option>
-								<option value='9' <?php selected( '9', $options['drp_select_box'] ); ?>>9</option>
-								<option value='10' <?php selected( '10', $options['drp_select_box'] ); ?>>10</option>
+								<option value='1' <?php selected( '1', $options['drp_select_box'] ); ?>><?php _e( '1', 'dashboard-feed-widget' ); ?></option>
+								<option value='2' <?php selected( '2', $options['drp_select_box'] ); ?>><?php _e( '2', 'dashboard-feed-widget' ); ?></option>
+								<option value='3' <?php selected( '3', $options['drp_select_box'] ); ?>><?php _e( '3', 'dashboard-feed-widget' ); ?></option>
+								<option value='4' <?php selected( '4', $options['drp_select_box'] ); ?>><?php _e( '4', 'dashboard-feed-widget' ); ?></option>
+								<option value='5' <?php selected( '5', $options['drp_select_box'] ); ?>><?php _e( '5', 'dashboard-feed-widget' ); ?></option>
+								<option value='6' <?php selected( '6', $options['drp_select_box'] ); ?>><?php _e( '6', 'dashboard-feed-widget' ); ?></option>
+								<option value='7' <?php selected( '7', $options['drp_select_box'] ); ?>><?php _e( '7', 'dashboard-feed-widget' ); ?></option>
+								<option value='8' <?php selected( '8', $options['drp_select_box'] ); ?>><?php _e( '8', 'dashboard-feed-widget' ); ?></option>
+								<option value='9' <?php selected( '9', $options['drp_select_box'] ); ?>><?php _e( '9', 'dashboard-feed-widget' ); ?></option>
+								<option value='10' <?php selected( '10', $options['drp_select_box'] ); ?>><?php _e( '10', 'dashboard-feed-widget' ); ?></option>
 							</select>
 							<p class="description"><?php _e( 'How many feed items to show in the widget?', 'dashboard-feed-widget' ); ?></p>
 							<input type="hidden" name="action" value="update" />
@@ -151,17 +151,17 @@ function dbfw_render_form() { ?>
 
 			<div class="inside">
 				<div class="top">
-					<img class="author-image" src="https://www.gravatar.com/avatar/<?php echo md5( 'info@senlinonline.com' ); ?>" />
+					<img class="author-image" src="https://en.gravatar.com/userimage/181009961/34fa8b23fb01d750faa10666ae884f27.jpg?size=200" />
 					<p>
-						<?php printf( __( 'Hi, my name is Piet Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
+						<?php printf( __( 'Hi, my name is Pieter Bos, I hope you like this plugin! Please check out any of my other plugins on <a href="%s" title="SO WP Plugins">SO WP Plugins</a>. You can find out more information about me via the following links:', 'dashboard-feed-widget' ),
 							esc_url( 'https://so-wp.com' )
 						); ?>
 					</p>
 				</div> <!-- end .top -->
 
 				<ul>
-						<li><a href="https://bohanintl.com/" target="_blank" title="BHI Consulting"><?php _e( 'BHI Consulting', 'dashboard-feed-widget' ); ?></a></li>
-						<li><a href="https://www.linkedin.com/in/pietbos" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://www.bhi-localization.com/" target="_blank" title="BHI Consulting"><?php _e( 'BHI Localization for Websites', 'dashboard-feed-widget' ); ?></a></li>
+						<li><a href="https://www.linkedin.com/in/pieterbos83" target="_blank" title="LinkedIn profile"><?php _e( 'LinkedIn', 'dashboard-feed-widget' ); ?></a></li>
 						<li><a href="https://so-wp.com/" target="_blank" title="SO WP"><?php _e( 'SO WP', 'dashboard-feed-widget' ); ?></a></li>
 						<li><a href="https://github.com/senlin" title="on Github"><?php _e( 'Github', 'dashboard-feed-widget' ); ?></a></li>
 						<li><a href="https://https://bohanintl.com/wptips/" target="_blank" title="WP TIPS"><?php _e( 'WP Tips', 'dashboard-feed-widget' ); ?></a></li>
