@@ -1,7 +1,7 @@
 Dashboard Feed Widget
 =====================
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/dashboard-feed-widget.svg)](https://wordpress.org/plugins/dashboard-feed-widget) [![WP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/wp-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![PHP compatibility](https://plugintests.com/plugins/dashboard-feed-widget/php-badge.svg)](https://plugintests.com/plugins/dashboard-feed-widget/latest) [![ClassicPress tested on version 1.0.1](https://img.shields.io/badge/ClassicPress-1.0.1-03768e.svg?style=flat-round)](https://www.classicpress.net)
+### October 26, 2022: No longer in active development, use at own risk
 
 ###### Last updated March 8, 2021
 ###### tested up to WordPress 5.7
@@ -53,8 +53,6 @@ This repo is open to _any_ kind of contributions.
 [BHI Localization for Websites](https://www.bhi-localization.com/)
 
 [SO WP](https://so-wp.com)
-
-[WP TIPS](https://bohanintl.com/wptips/)
 
 [Github](https://github.com/senlin)
 
